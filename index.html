@@ -834,14 +834,24 @@
   <!-- 2. HUMAN BEHAVIOR ATLAS 5-STAGE CASE STUDY SHEET -->
   <main id="featured-sheet" class="max-w-4xl mx-auto px-6 py-10 space-y-6">
     
-    <!-- Quick Spotlight Filter Bar for Instant Testing -->
-    <div class="p-4 sm:p-5 rounded-2xl bg-[#161618] border border-white/[0.06] space-y-3">
+    <!-- Outer Sheet Container -->
+    <!-- Case Study Slide Container: Standalone distinct modular cards -->
+    <div id="activeCaseSheet" class="space-y-6 lg:space-y-8">
+      <!-- Dynamically filled with selected Effect -->
+    </div>
+
+  </main>
+
+  
+  <!-- 2.5 CURATED SPOTLIGHT QUICK-SWITCHER (Relocated Below Slide as requested by User) -->
+  <section class="max-w-7xl mx-auto px-6 lg:px-12 py-4">
+    <div class="p-4 sm:p-5 rounded-2xl bg-[#141416] border border-white/[0.08] space-y-3 shadow-xl">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-2 text-xs font-mono text-[var(--text-dim)]">
           <span class="w-2 h-2 rounded-full bg-[#cfe2f8] animate-pulse"></span>
-          <span id="spotlightHeading" class="uppercase tracking-wider">CASE STUDIES TIÊU BIỂU CÓ ẢNH MINH HỌA NỘI TẠI (1-CLICK XEM NGAY):</span>
+          <span id="spotlightHeading" class="uppercase tracking-wider">CASE STUDIES TIÊU BIỂU (1-CLICK DIVE IN):</span>
         </div>
-        <span id="spotlightSub" class="text-[10px] font-mono text-[var(--text-dimmer)]">100% Embedded Base64 · Không lỗi ảnh</span>
+        <span id="spotlightSub" class="text-[10px] font-mono text-[var(--text-dimmer)]">100% Embedded Visuals · Quick Dive</span>
       </div>
 
       <div id="spotlightButtonRow" class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none sm:flex-wrap -mx-2 px-2 sm:mx-0 sm:px-0">
@@ -853,28 +863,22 @@
           <span>⚡ Red Bull Slim Can</span>
           <span class="text-[10px] text-[var(--text-dim)] font-mono">(Von Restorff)</span>
         </button>
-
         <button onclick="selectEffect('cognitive-fluency')" class="spot-btn px-3 py-1.5 rounded-lg text-xs bg-white/[0.04] hover:bg-[#cfe2f8] hover:text-[#091322] border border-white/[0.08] transition flex items-center gap-1.5 font-medium">
           <span>🚗 Uber 1-Chạm</span>
           <span class="text-[10px] text-[var(--text-dim)] font-mono">(Fluency)</span>
         </button>
-
         <button onclick="selectEffect('identity-based-motivation')" class="spot-btn px-3 py-1.5 rounded-lg text-xs bg-white/[0.04] hover:bg-[#cfe2f8] hover:text-[#091322] border border-white/[0.08] transition flex items-center gap-1.5 font-medium">
           <span>🧥 Patagonia 'Don't Buy'</span>
           <span class="text-[10px] text-[var(--text-dim)] font-mono">(Identity)</span>
         </button>
-
-
         <button onclick="selectEffect('loss-aversion')" class="spot-btn px-3 py-1.5 rounded-lg text-xs bg-white/[0.04] hover:bg-[#cfe2f8] hover:text-[#091322] border border-white/[0.08] transition flex items-center gap-1.5 font-medium">
-          <span>🍺 Heineken 0.0</span>
+          <span>🏨 Booking.com 1 Phòng</span>
           <span class="text-[10px] text-[var(--text-dim)] font-mono">(Loss Aversion)</span>
         </button>
-
         <button onclick="selectEffect('decoy-effect')" class="spot-btn px-3 py-1.5 rounded-lg text-xs bg-white/[0.04] hover:bg-[#cfe2f8] hover:text-[#091322] border border-white/[0.08] transition flex items-center gap-1.5 font-medium">
           <span>🍿 Bắp S/M/L</span>
           <span class="text-[10px] text-[var(--text-dim)] font-mono">(Decoy)</span>
         </button>
-
         <button onclick="selectEffect('sunk-cost-fallacy')" class="spot-btn px-3 py-1.5 rounded-lg text-xs bg-white/[0.04] hover:bg-[#cfe2f8] hover:text-[#091322] border border-white/[0.08] transition flex items-center gap-1.5 font-medium">
           <span>🦞 Buffet &amp; Flights</span>
           <span class="text-[10px] text-[var(--text-dim)] font-mono">(Sunk Cost)</span>
@@ -883,108 +887,126 @@
           <span>☕ Starbucks Cỡ Ly</span>
           <span class="text-[10px] text-[var(--text-dim)] font-mono">(Compromise)</span>
         </button>
-
         <button onclick="selectEffect('halo-effect')" class="spot-btn px-3 py-1.5 rounded-lg text-xs bg-white/[0.04] hover:bg-[#cfe2f8] hover:text-[#091322] border border-white/[0.08] transition flex items-center gap-1.5 font-medium">
           <span>🎧 Apple iPod</span>
           <span class="text-[10px] text-[var(--text-dim)] font-mono">(Halo)</span>
         </button>
-
         <button onclick="selectEffect('peak-end-rule')" class="spot-btn px-3 py-1.5 rounded-lg text-xs bg-white/[0.04] hover:bg-[#cfe2f8] hover:text-[#091322] border border-white/[0.08] transition flex items-center gap-1.5 font-medium">
           <span>🌭 IKEA $1 Hotdog</span>
           <span class="text-[10px] text-[var(--text-dim)] font-mono">(Peak-End)</span>
         </button>
-
         <button onclick="selectEffect('ikea-effect')" class="spot-btn px-3 py-1.5 rounded-lg text-xs bg-white/[0.04] hover:bg-[#cfe2f8] hover:text-[#091322] border border-white/[0.08] transition flex items-center gap-1.5 font-medium">
           <span>🛋️ Lắp Ráp IKEA</span>
           <span class="text-[10px] text-[var(--text-dim)] font-mono">(IKEA Effect)</span>
         </button>
-
         <button onclick="selectEffect('scarcity-effect')" class="spot-btn px-3 py-1.5 rounded-lg text-xs bg-white/[0.04] hover:bg-[#cfe2f8] hover:text-[#091322] border border-white/[0.08] transition flex items-center gap-1.5 font-medium">
           <span>🏷️ Supreme Drop</span>
           <span class="text-[10px] text-[var(--text-dim)] font-mono">(Scarcity)</span>
         </button>
-
         <button onclick="selectEffect('streaks-and-progress')" class="spot-btn px-3 py-1.5 rounded-lg text-xs bg-white/[0.04] hover:bg-[#cfe2f8] hover:text-[#091322] border border-white/[0.08] transition flex items-center gap-1.5 font-medium">
           <span>🔥 Duolingo Streak</span>
           <span class="text-[10px] text-[var(--text-dim)] font-mono">(Habit Loop)</span>
         </button>
-
         <button onclick="selectEffect('social-proof')" class="spot-btn px-3 py-1.5 rounded-lg text-xs bg-white/[0.04] hover:bg-[#cfe2f8] hover:text-[#091322] border border-white/[0.08] transition flex items-center gap-1.5 font-medium">
           <span>👥 Quán Đông Khách</span>
           <span class="text-[10px] text-[var(--text-dim)] font-mono">(Social Proof)</span>
         </button>
-
         <button onclick="selectEffect('anchoring-effect')" class="spot-btn px-3 py-1.5 rounded-lg text-xs bg-white/[0.04] hover:bg-[#cfe2f8] hover:text-[#091322] border border-white/[0.08] transition flex items-center gap-1.5 font-medium">
           <span>🍞 Máy Nướng Bánh</span>
           <span class="text-[10px] text-[var(--text-dim)] font-mono">(Anchoring)</span>
         </button>
-
         <button onclick="selectEffect('choice-overload')" class="spot-btn px-3 py-1.5 rounded-lg text-xs bg-white/[0.04] hover:bg-[#cfe2f8] hover:text-[#091322] border border-white/[0.08] transition flex items-center gap-1.5 font-medium">
           <span>🍓 24 vs 6 Lọ Mứt</span>
           <span class="text-[10px] text-[var(--text-dim)] font-mono">(Choice Overload)</span>
         </button>
       </div>
     </div>
-
-    <!-- Outer Sheet Container -->
-    <!-- Case Study Slide Container: Standalone distinct modular cards -->
-    <div id="activeCaseSheet" class="space-y-6 lg:space-y-8">
-      <!-- Dynamically filled with selected Effect -->
-    </div>
-
-  </main>
+  </section>
 
   <!-- 3. EFFECT LIBRARY DIRECTORY (Tra cứu nhanh 67 hiệu ứng theo phong cách Dark Mode đồng bộ) -->
   <section id="library-grid" class="max-w-7xl mx-auto px-6 lg:px-12 py-16 border-t border-white/[0.06]">
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
-      <div>
-        <div class="text-xs font-mono text-[var(--text-dim)] uppercase tracking-widest mb-1">LIBRARY DIRECTORY</div>
-        <h2 id="libHeading" class="text-3xl font-normal text-white tracking-tight">Danh bạ 67 hiệu ứng tâm lý học hành vi</h2>
-        <p id="libDesc" class="text-xs text-[var(--text-dim)] mt-1">Hệ thống hóa theo 6 thùy não & các giai đoạn phễu người dùng. Bấm vào bất kỳ thẻ nào để hiển thị slide phân tích.</p>
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
+      <div class="space-y-2">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-[10px] font-mono text-[var(--text-dim)] uppercase tracking-wider">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#cfe2f8]"></span>
+          <span>DIMENSION STUDIOS INSPIRED · 67 MENTAL MODELS</span>
+        </div>
+        <h2 id="libHeading" class="text-3xl sm:text-4xl font-normal text-white tracking-tight leading-tight">
+          Thư viện Case Studies & Mô hình Hành vi
+        </h2>
+        <p id="libDesc" class="text-xs sm:text-sm text-[var(--text-dim)] max-w-2xl leading-relaxed">
+          Real results from real brands: Xem cách các thương hiệu hàng đầu thúc đẩy tăng trưởng, nâng cao ROI và triệt tiêu rào cản nhận thức. Bấm vào bất kỳ thẻ nào để hiển thị slide phân tích.
+        </p>
       </div>
 
-      <!-- Sleek Compact Search Pill -->
-      <div class="relative w-64 lg:w-72 shrink-0">
-        <input 
-          type="text" 
-          id="libSearch" 
-          placeholder="Tìm hiệu ứng, brand..." 
-          class="w-full h-9 pl-9 pr-8 rounded-full bg-white/[0.04] hover:bg-white/[0.06] border border-white/10 focus:border-[#cfe2f8]/70 focus:bg-white/[0.08] text-xs text-white placeholder:text-zinc-500 transition-all outline-none font-mono"
-        />
-        <svg class="w-3.5 h-3.5 text-zinc-400 absolute left-3.5 top-2.5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-        </svg>
-        <span class="absolute right-3 top-2 text-[10px] font-mono text-zinc-500 border border-white/10 rounded px-1 py-0.2 pointer-events-none">⌘K</span>
+      <!-- Search & View Mode Switcher Toolbar -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
+        <!-- Search Pill -->
+        <div class="relative w-full sm:w-64 lg:w-72">
+          <input 
+            type="text" 
+            id="libSearch" 
+            placeholder="Tìm hiệu ứng, brand..." 
+            class="w-full h-10 pl-9 pr-10 rounded-full bg-white/[0.04] hover:bg-white/[0.06] border border-white/10 focus:border-[#cfe2f8]/70 focus:bg-white/[0.08] text-xs text-white placeholder:text-zinc-500 transition-all outline-none font-mono"
+          />
+          <svg class="w-3.5 h-3.5 text-zinc-400 absolute left-3.5 top-3.5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <span class="absolute right-3.5 top-2.5 text-[10px] font-mono text-zinc-500 border border-white/10 rounded px-1.5 py-0.5 pointer-events-none">⌘K</span>
+        </div>
+
+        <!-- View Switcher -->
+        <div class="flex items-center bg-white/[0.04] p-1 rounded-full border border-white/10 shrink-0">
+          <button id="viewBtnBento" onclick="setViewMode('bento')" class="px-3.5 py-1.5 rounded-full text-xs font-medium transition bg-[#cfe2f8] text-[#091322] shadow-sm flex items-center gap-1.5">
+            <span>🎴</span>
+            <span id="viewBentoText">Bento Visual</span>
+          </button>
+          <button id="viewBtnCompact" onclick="setViewMode('compact')" class="px-3.5 py-1.5 rounded-full text-xs font-medium transition text-[var(--text-dim)] hover:text-white flex items-center gap-1.5">
+            <span>📋</span>
+            <span id="viewCompactText">Danh sách</span>
+          </button>
+        </div>
       </div>
     </div>
 
     <!-- Cluster filter tabs for Directory -->
     <div class="flex flex-wrap items-center gap-2 mb-8 pb-4 border-b border-white/[0.05]">
-      <button id="dirPillAll" onclick="filterDirectory('all')" class="dir-pill active px-3 py-1.5 rounded-lg text-xs bg-[#cfe2f8] text-[#091322] font-medium transition">
+      <button id="dirPillAll" onclick="filterDirectory('all')" class="dir-pill active px-3.5 py-1.5 rounded-full text-xs bg-[#cfe2f8] text-[#091322] font-medium transition">
         Tất cả (67)
       </button>
-      <button id="dirPillAttention" onclick="filterDirectory('attention')" class="dir-pill px-3 py-1.5 rounded-lg text-xs text-[var(--text-dim)] hover:text-white bg-white/[0.03] border border-white/[0.06] transition">
+      <button id="dirPillAttention" onclick="filterDirectory('attention')" class="dir-pill px-3.5 py-1.5 rounded-full text-xs text-[var(--text-dim)] hover:text-white bg-white/[0.03] border border-white/[0.06] transition">
         Attention & Trí nhớ (11)
       </button>
-      <button id="dirPillJudgment" onclick="filterDirectory('judgment')" class="dir-pill px-3 py-1.5 rounded-lg text-xs text-[var(--text-dim)] hover:text-white bg-white/[0.03] border border-white/[0.06] transition">
+      <button id="dirPillJudgment" onclick="filterDirectory('judgment')" class="dir-pill px-3.5 py-1.5 rounded-full text-xs text-[var(--text-dim)] hover:text-white bg-white/[0.03] border border-white/[0.06] transition">
         Phán đoán & Thiên kiến (12)
       </button>
-      <button id="dirPillPrice" onclick="filterDirectory('price')" class="dir-pill px-3 py-1.5 rounded-lg text-xs text-[var(--text-dim)] hover:text-white bg-white/[0.03] border border-white/[0.06] transition">
+      <button id="dirPillPrice" onclick="filterDirectory('price')" class="dir-pill px-3.5 py-1.5 rounded-full text-xs text-[var(--text-dim)] hover:text-white bg-white/[0.03] border border-white/[0.06] transition">
         Giá & Khuyến mãi (11)
       </button>
-      <button id="dirPillSocial" onclick="filterDirectory('social')" class="dir-pill px-3 py-1.5 rounded-lg text-xs text-[var(--text-dim)] hover:text-white bg-white/[0.03] border border-white/[0.06] transition">
+      <button id="dirPillSocial" onclick="filterDirectory('social')" class="dir-pill px-3.5 py-1.5 rounded-full text-xs text-[var(--text-dim)] hover:text-white bg-white/[0.03] border border-white/[0.06] transition">
         Ảnh hưởng xã hội (11)
       </button>
-      <button id="dirPillMindset" onclick="filterDirectory('mindset')" class="dir-pill px-3 py-1.5 rounded-lg text-xs text-[var(--text-dim)] hover:text-white bg-white/[0.03] border border-white/[0.06] transition">
+      <button id="dirPillMindset" onclick="filterDirectory('mindset')" class="dir-pill px-3.5 py-1.5 rounded-full text-xs text-[var(--text-dim)] hover:text-white bg-white/[0.03] border border-white/[0.06] transition">
         Tâm thế & Động lực (11)
       </button>
-      <button id="dirPillPlace" onclick="filterDirectory('place')" class="dir-pill px-3 py-1.5 rounded-lg text-xs text-[var(--text-dim)] hover:text-white bg-white/[0.03] border border-white/[0.06] transition">
+      <button id="dirPillPlace" onclick="filterDirectory('place')" class="dir-pill px-3.5 py-1.5 rounded-full text-xs text-[var(--text-dim)] hover:text-white bg-white/[0.03] border border-white/[0.06] transition">
         Không gian & Trải nghiệm (11)
       </button>
     </div>
 
-    <!-- Grid of 67 effects -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="libraryList">
+    <!-- Active Filter Status & Count Bar -->
+    <div class="flex items-center justify-between text-xs font-mono text-[var(--text-dim)] mb-6">
+      <div id="dirCountText">Hiển thị 67 hiệu ứng</div>
+      <div id="dirPageStatus" class="text-zinc-500"></div>
+    </div>
+
+    <!-- Container of 67 effects (Dimension Bento Grid) -->
+    <div id="libraryList">
+      <!-- Populated via JS -->
+    </div>
+
+    <!-- Pagination Controls Bar (Eliminating 67 endless scroll eye fatigue) -->
+    <div id="libraryPagination" class="mt-10 pt-6 border-t border-white/[0.05] flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-[var(--text-dim)]">
       <!-- Populated via JS -->
     </div>
   </section>
@@ -1031,11 +1053,11 @@
         canvasHint: "🖱️ Cuộn chuột / Chụm ngón tay để <strong>phóng to cực đại vào từng phân tử</strong> · Kéo chuột xoay 3D · <strong>Shift + Kéo hoặc Chuột phải để Pan</strong> · Nhấp đúp vào phân tử",
         tipCta: "Bấm điểm sáng để nạp Case Study",
         zoomRange: "Phóng đại vi mô: 35% - 1000%",
-        spotlightHeading: "CASE STUDIES TIÊU BIỂU CÓ ẢNH MINH HỌA NỘI TẠI (1-CLICK XEM NGAY):",
-        spotlightSub: "100% Embedded Base64 · Không lỗi ảnh",
+        spotlightHeading: "CASE STUDIES TIÊU BIỂU (1-CLICK DIVE IN):",
+        spotlightSub: "100% Embedded Visuals · Quick Switcher",
         blockerDesc: "Vui lòng truy cập trên Laptop hoặc Màn hình lớn để có trải nghiệm 3D Neuro-Chamber và slide phân tích 67 case study tốt nhất.",
-        libHeading: "Danh bạ 67 hiệu ứng tâm lý học hành vi",
-        libDesc: "Hệ thống hóa theo 6 thùy não & các giai đoạn phễu người dùng. Bấm vào bất kỳ thẻ nào để hiển thị slide phân tích.",
+        libHeading: "Thư viện Case Studies & Mô hình Hành vi",
+        libDesc: "Real results from real brands: Xem cách các thương hiệu hàng đầu thúc đẩy tăng trưởng, nâng cao ROI và triệt tiêu rào cản nhận thức. Bấm vào bất kỳ thẻ nào để hiển thị slide phân tích.",
         searchPlaceholder: "Tìm hiệu ứng, brand, cơ chế...",
         viewCase: "Xem Case Study",
         emptySearch: 'Không tìm thấy hiệu ứng phù hợp với từ khóa "{q}".',
@@ -1044,6 +1066,7 @@
         sec3Sub: "/ Thí nghiệm kinh điển & Số liệu thực chứng",
         sec4Sub: "/ Chiến dịch thực chiến & Cannes Lions",
         sec5Sub: "/ Ứng dụng thực tế BAU & Ranh giới rủi ro",
+        sec6Sub: "/ Mô hình toán học & Đòn bẩy mẫu số rủi ro",
         sec2PlainTitle: "Bản chất cơ chế (In plain language)",
         sec2TestBadge: "TÌNH HUỐNG ĐỜI THƯỜNG",
         sec3PaperCta: "Đọc nghiên cứu gốc",
@@ -1055,6 +1078,12 @@
         sec4ReadSource: "Đọc case gốc tại",
         sec5UseTitle: "USE IT WHEN (BAU PLAYBOOK)",
         sec5RevTitle: "THE REVERSAL (RỦI RO NÊN TRÁNH)",
+        sec6ValTitle: "PHƯƠNG TRÌNH GIÁ TRỊ CẢM NHẬN & ĐÒN BẨY RỦI RO",
+        sec6ValExpl: "Rủi ro nằm ở <strong>MẪU SỐ</strong>. Trong kinh tế học hành vi, người tiêu dùng không từ chối vì thiếu tính năng, mà dừng lại vì nỗi sợ rủi ro (sợ mất tiền, sợ chọn sai, phiền phức). Triệt tiêu rủi ro (Hoàn tiền 100%, bảo hành 365 ngày, Free trial không cần thẻ, cam kết không phiền phức) có đòn bẩy gấp 4x so với việc giảm giá bán!",
+        sec6SimTitle: "Mô phỏng đòn bẩy mẫu số thời gian thực",
+        sec6OfferExpl: "Công thức chào hàng chuyển đổi cao: Kết hợp nhu cầu bức thiết + Kết quả phóng đại + Kích hoạt đòn bẩy hành vi (Scarcity, Social Proof, Pratfall).",
+        sec6AttnExpl: "Bộ lọc Hệ lưới thần kinh (RAS): Để thông điệp lọt qua bộ lọc phòng vệ vô thức, nó phải đồng thời thỏa mãn: Cá nhân hóa, Dễ chịu, Bất ngờ và Siêu dễ hiểu.",
+        sec6PipelineExpl: "Quy trình chẩn đoán 4 bước: Vấn đề kinh doanh (Issue) → Rào cản tâm lý (Barrier) → Giải pháp can thiệp (Solution) → Hiệu ứng hành vi (Psychology).",
         flyToHint: "Nhấp đúp để nạp Case Study ↗",
         viewingAll: "Đang xem tất cả 67 nơ-ron",
         viewingLobe: "Thùy",
@@ -1073,7 +1102,15 @@
         dirPrice: "Giá & Khuyến mãi (11)",
         dirSocial: "Ảnh hưởng xã hội (11)",
         dirMindset: "Tâm thế & Động lực (11)",
-        dirPlace: "Không gian & Trải nghiệm (11)"
+        dirPlace: "Không gian & Trải nghiệm (11)",
+        viewBento: "Bento Visual",
+        viewCompact: "Danh sách",
+        showingCount: "Hiển thị {n} hiệu ứng",
+        pageStatus: "Trang {cur} / {total}",
+        pagePrev: "Trước",
+        pageNext: "Sau",
+        viewAllBtn: "Hiển thị tất cả 67",
+        viewPagedBtn: "Xem theo trang (12/trang)"
       },
       en: {
         switchLabel: "LANGUAGE:",
@@ -1092,11 +1129,11 @@
         canvasHint: "🖱️ Scroll wheel / Pinch to <strong>zoom into molecular scale</strong> · Drag to orbit 3D · <strong>Shift + Drag or Right-drag to Pan</strong> · Double-click to fly in",
         tipCta: "Click neuron to load Case Study",
         zoomRange: "Molecular Zoom: 35% - 1000%",
-        spotlightHeading: "FEATURED CANNES LIONS & GLOBAL CASES (1-CLICK INSTANT PREVIEW):",
-        spotlightSub: "100% Embedded Visuals · Instant Load",
+        spotlightHeading: "FEATURED CANNES LIONS & GLOBAL CASES (1-CLICK DIVE IN):",
+        spotlightSub: "100% Embedded Visuals · Quick Switcher",
         blockerDesc: "Please access on a Laptop or Desktop display for the optimal 3D Neuro-Chamber and 67 interactive case study presentations.",
-        libHeading: "67 Behavioral Science & Mental Models Directory",
-        libDesc: "Mapped across 6 cognitive lobes and user conversion funnels. Click any card to launch the in-depth case study.",
+        libHeading: "Case Studies & Mental Models Directory",
+        libDesc: "Real results from real brands: see how 67 behavioral mental models drive growth, boost ROI, and eliminate friction. Click any card to launch the in-depth case study.",
         searchPlaceholder: "Search mental models, brands, mechanics...",
         viewCase: "View Case Study",
         emptySearch: 'No behavioral models found matching "{q}".',
@@ -1105,6 +1142,7 @@
         sec3Sub: "/ Landmark Academic Experiment & Data",
         sec4Sub: "/ Real-World Execution & Cannes Lions",
         sec5Sub: "/ Growth Playbook & Risk Boundaries",
+        sec6Sub: "/ Neuromarketing Calculus & Denominator Risk Levers",
         sec2PlainTitle: "In Plain Language",
         sec2TestBadge: "EVERYDAY TEST",
         sec3PaperCta: "Read Academic Paper",
@@ -1116,6 +1154,12 @@
         sec4ReadSource: "Read original case study at",
         sec5UseTitle: "USE IT WHEN (GROWTH PLAYBOOK)",
         sec5RevTitle: "THE REVERSAL (BACKFIRE WARNING)",
+        sec6ValTitle: "CONSUMER VALUE EQUATION & RISK LEVER",
+        sec6ValExpl: "Risk sits in the <strong>DENOMINATOR</strong>. In behavioral economics, customers rarely stall due to lack of features; they freeze due to perceived risk (fear of regret, financial risk, return hassle). Eliminating risk (100% money-back guarantees, 365-day frictionless returns, zero-risk free trials) yields a 4x multiplier on perceived value—far cheaper and more sustainable than price discounting!",
+        sec6SimTitle: "Real-Time Denominator Leverage Simulator",
+        sec6OfferExpl: "High-converting offer architecture: Combines core unmet need with an exaggerated end outcome, locked in by a behavioral trigger (Scarcity, Social Proof, Pratfall).",
+        sec6AttnExpl: "Reticular Activating System (RAS) filter: To bypass unconscious defense, a stimulus must be Personal, Pleasant, Surprising, and frictionless Easy.",
+        sec6PipelineExpl: "4-step diagnostic protocol: Trace from Business Issue → Identify Consumer Barrier → Engineer Intervention Solution → Activate Target Behavioral Psychology.",
         flyToHint: "Double-click to load Case Study ↗",
         viewingAll: "Viewing all 67 neurons",
         viewingLobe: "Lobe",
@@ -1134,7 +1178,15 @@
         dirPrice: "Price & Promotion (11)",
         dirSocial: "Social Influence (11)",
         dirMindset: "Mindset & Motivation (11)",
-        dirPlace: "Place & Experience (11)"
+        dirPlace: "Place & Experience (11)",
+        viewBento: "Bento Visual",
+        viewCompact: "Compact List",
+        showingCount: "Showing {n} mental models",
+        pageStatus: "Page {cur} of {total}",
+        pagePrev: "Prev",
+        pageNext: "Next",
+        viewAllBtn: "View All 67",
+        viewPagedBtn: "Paged View (12/page)"
       }
     };
 
@@ -1257,6 +1309,10 @@
       if (el('modalResultsHeading')) el('modalResultsHeading').textContent = t.modalResultsTitle;
       if (el('modalTakeawayHeading')) el('modalTakeawayHeading').textContent = t.modalTakeawayTitle;
       if (el('modalRefHeading')) el('modalRefHeading').textContent = t.modalRefTitle;
+      
+      if (el('viewBentoText')) el('viewBentoText').textContent = t.viewBento;
+      if (el('viewCompactText')) el('viewCompactText').textContent = t.viewCompact;
+
       if (el('modalCloseActionBtn')) el('modalCloseActionBtn').textContent = t.modalCloseBtnText;
     }
 
@@ -1275,6 +1331,254 @@
     // RENDER CASE SHEET (Dynamic Bilingual Adaptation)
     // -------------------------------------------------------------
     window.currentActiveEffect = null;
+
+    
+    // -------------------------------------------------------------
+    // BEHAVIORAL MATHEMATICS & RISK SENSITIVITY ENGINE
+    // -------------------------------------------------------------
+    function getEffectFormula(id, isVi) {
+      const formulas = {
+        'loss-aversion': {
+          latex: "V(\\Delta x) = (\\Delta x)^\\alpha \\text{ if } \\Delta x \\ge 0; \\quad -\\lambda(-\\Delta x)^\\beta \\text{ if } \\Delta x < 0 \\quad (\\lambda \\approx 2.25)",
+          desc: isVi 
+            ? "Kahneman & Tversky (Prospect Theory): Mất mát 100$ gây đau đớn gấp 2.25 lần niềm vui khi nhận 100$. Mẫu số rủi ro tác động trực tiếp vào hạch hạnh nhân Amygdala."
+            : "Kahneman & Tversky (Prospect Theory): Losses loom 2.25x larger than equivalent gains. Perceived risk triggers immediate Amygdala activation.",
+          frictionPercent: 18,
+          frictionLevel: isVi ? "Thấp (18%)" : "Low (18%)",
+          frictionBarColor: "bg-emerald-400",
+          backfirePercent: 35,
+          backfireLevel: isVi ? "Trung bình (35%)" : "Moderate (35%)",
+          backfireBarColor: "bg-amber-400",
+          ethicalScore: 88,
+          riskScore: 32
+        },
+        'decoy-effect': {
+          latex: "P(T \\mid \\{T, C, D\\}) > P(T \\mid \\{T, C\\}) \\quad [U(D) \\ll U(T)]",
+          desc: isVi 
+            ? "Huber, Payne & Puto: Đưa vào lựa chọn mồi nhử D (kém hơn Target nhưng tương đương giá) làm tỷ trọng chọn Target tăng vọt từ 32% lên 84%."
+            : "Huber, Payne & Puto: Introducing an asymmetrically dominated decoy shifts selection probability overwhelmingly toward the target option.",
+          frictionPercent: 22,
+          frictionLevel: isVi ? "Thấp (22%)" : "Low (22%)",
+          frictionBarColor: "bg-emerald-400",
+          backfirePercent: 28,
+          backfireLevel: isVi ? "Kiểm soát được (28%)" : "Controlled (28%)",
+          backfireBarColor: "bg-amber-400",
+          ethicalScore: 85,
+          riskScore: 26
+        },
+        'anchoring-effect': {
+          latex: "\\text{Estimate} = \\text{Anchor} + \\alpha \\cdot (\\text{TrueValue} - \\text{Anchor}), \\quad 0 < \\alpha < 1",
+          desc: isVi 
+            ? "Tversky & Kahneman: Não bộ sử dụng con số đầu tiên nhìn thấy làm mốc cố định; bước hiệu chỉnh tiếp theo luôn không đủ, làm biến dạng định giá."
+            : "Tversky & Kahneman: The initial anchor disproportionately weights subjective judgment; subsequent cognitive adjustment remains strictly insufficient.",
+          frictionPercent: 15,
+          frictionLevel: isVi ? "Rất thấp (15%)" : "Very Low (15%)",
+          frictionBarColor: "bg-emerald-400",
+          backfirePercent: 42,
+          backfireLevel: isVi ? "Đáng chú ý (42%)" : "Notable (42%)",
+          backfireBarColor: "bg-amber-400",
+          ethicalScore: 86,
+          riskScore: 35
+        },
+        'sunk-cost-fallacy': {
+          latex: "P(\\text{Commitment}) \\propto \\frac{\\int_0^t \\text{Cost}_{\\text{past}}(\\tau) d\\tau}{\\text{MarginalUtility}_{\\text{future}}}",
+          desc: isVi 
+            ? "Thaler (1980): Xác suất tiếp tục đầu tư tỷ lệ thuận với tổng chi phí/thời gian đã bỏ ra trong quá khứ, bất chấp triển vọng tương lai tiêu cực."
+            : "Thaler (1980): Escalation of commitment scales directly with cumulative past expenditure rather than forward-looking marginal return.",
+          frictionPercent: 30,
+          frictionLevel: isVi ? "Trung bình (30%)" : "Moderate (30%)",
+          frictionBarColor: "bg-amber-400",
+          backfirePercent: 55,
+          backfireLevel: isVi ? "Cao (55%)" : "High (55%)",
+          backfireBarColor: "bg-rose-400",
+          ethicalScore: 78,
+          riskScore: 48
+        },
+        'compromise-effect': {
+          latex: "U(x_{\\text{mid}}) = V(x_{\\text{mid}}) - \\theta \\cdot \\text{ExtremenessLoss}(x_{\\text{mid}}) \\quad (\\theta > 0)",
+          desc: isVi 
+            ? "Simonson: Tâm lý ác cảm thái cực (Extremeness Aversion) khiến phương án ở giữa được xem là an toàn và dễ biện minh nhất cho người mua."
+            : "Simonson: Extremeness aversion penalizes outlier options, maximizing utility for the compromise center choice.",
+          frictionPercent: 12,
+          frictionLevel: isVi ? "Thấp (12%)" : "Low (12%)",
+          frictionBarColor: "bg-emerald-400",
+          backfirePercent: 20,
+          backfireLevel: isVi ? "Thấp (20%)" : "Low (20%)",
+          backfireBarColor: "bg-emerald-400",
+          ethicalScore: 94,
+          riskScore: 18
+        },
+        'peak-end-rule': {
+          latex: "U_{\\text{retrospective}} = \\frac{U_{\\text{peak}} + U_{\\text{end}}}{2} \\quad \\left[ \\frac{\\partial U}{\\partial \\text{Duration}} \\approx 0 \\right]",
+          desc: isVi 
+            ? "Kahneman (1993): Đánh giá ký ức bỏ qua hoàn toàn tổng thời lượng trải nghiệm, chỉ lưu giữ điểm cảm xúc mãnh liệt nhất và khoảnh khắc kết thúc."
+            : "Kahneman (1993): Retrospective utility strictly neglects duration, averaging exclusively the affective peak and the terminal interaction.",
+          frictionPercent: 8,
+          frictionLevel: isVi ? "Tối thiểu (8%)" : "Minimal (8%)",
+          frictionBarColor: "bg-emerald-400",
+          backfirePercent: 12,
+          backfireLevel: isVi ? "Rất thấp (12%)" : "Very Low (12%)",
+          backfireBarColor: "bg-emerald-400",
+          ethicalScore: 99,
+          riskScore: 12
+        },
+        'pratfall-effect': {
+          latex: "\\text{Likeability} = \\text{Competence} \\times (1 + \\delta_{\\text{flaw}} \\cdot \\mathbb{I}_{\\text{high\\_competence}})",
+          desc: isVi 
+            ? "Elliot Aronson: Một khuyết điểm nhỏ được thừa nhận chân thành giúp nhân hóa và nâng cao 38% độ yêu mến đối với thương hiệu có năng lực cao."
+            : "Elliot Aronson: A transparent blunder humanizes high-competence entities, increasing perceived authenticity and consumer empathy by +38%.",
+          frictionPercent: 20,
+          frictionLevel: isVi ? "Thấp (20%)" : "Low (20%)",
+          frictionBarColor: "bg-emerald-400",
+          backfirePercent: 44,
+          backfireLevel: isVi ? "Cần thận trọng (44%)" : "Caution (44%)",
+          backfireBarColor: "bg-amber-400",
+          ethicalScore: 92,
+          riskScore: 36
+        },
+        'scarcity-effect': {
+          latex: "\\text{PerceivedValue} \\propto \\frac{1}{(\\text{AvailableSupply})^\\gamma} \\times e^{k \\cdot \\text{UrgencyTimer}}",
+          desc: isVi 
+            ? "Cialdini & Worchel: Sự khan hiếm giới hạn kích hoạt phản ứng sợ hãi mất cơ hội (FOMO), ức chế tư duy phản biện của vỏ não tiền trán."
+            : "Cialdini: Restricted supply and countdown friction trigger acute loss aversion, suppressing rational prefrontal evaluation.",
+          frictionPercent: 32,
+          frictionLevel: isVi ? "Trung bình (32%)" : "Moderate (32%)",
+          frictionBarColor: "bg-amber-400",
+          backfirePercent: 58,
+          backfireLevel: isVi ? "Dễ phản tác dụng (58%)" : "High Reactance (58%)",
+          backfireBarColor: "bg-rose-400",
+          ethicalScore: 76,
+          riskScore: 50
+        },
+        'halo-effect': {
+          latex: "E[\\text{Quality}_{\\text{brand}}] = w_{\\text{hero}} \\cdot Q_{\\text{hero}} + (1 - w_{\\text{hero}}) \\cdot \\bar{Q}_{\\text{prior}}",
+          desc: isVi 
+            ? "Thorndike: Một sản phẩm Hero xuất sắc vượt trội (iPod) chiếu rọi vầng hào quang nhận thức lên toàn bộ danh mục sản phẩm của thương hiệu (Mac)."
+            : "Thorndike: Overwhelming excellence in a flagship hero product illuminates subjective valuation across the entire product catalog.",
+          frictionPercent: 14,
+          frictionLevel: isVi ? "Thấp (14%)" : "Low (14%)",
+          frictionBarColor: "bg-emerald-400",
+          backfirePercent: 26,
+          backfireLevel: isVi ? "Thấp (26%)" : "Low (26%)",
+          backfireBarColor: "bg-amber-400",
+          ethicalScore: 91,
+          riskScore: 22
+        },
+        'cognitive-fluency': {
+          latex: "\\text{PerceivedTruth} \\propto \\frac{1}{\\text{CognitiveFriction}} \\cdot \\text{ProcessingVelocity}",
+          desc: isVi 
+            ? "Schwarz & Reber: Giao diện và thông điệp càng trực quan, trôi chảy, não bộ càng tự động đánh giá sản phẩm đáng tin và an toàn hơn."
+            : "Schwarz & Reber: Information processing fluency directly predicts perceived truth, familiarity, and conversion willingness.",
+          frictionPercent: 6,
+          frictionLevel: isVi ? "Tối thiểu (6%)" : "Minimal (6%)",
+          frictionBarColor: "bg-emerald-400",
+          backfirePercent: 9,
+          backfireLevel: isVi ? "Không đáng kể (9%)" : "Negligible (9%)",
+          backfireBarColor: "bg-emerald-400",
+          ethicalScore: 99,
+          riskScore: 9
+        },
+        'social-proof': {
+          latex: "P(\\text{Adoption}) = 1 - e^{-\\kappa \\cdot N_{\\text{social\\_signals}}} \\quad (\\kappa \\text{ tỷ lệ thuận với sự mơ hồ})",
+          desc: isVi 
+            ? "Asch & Cialdini: Trong trạng thái thông tin không chắc chắn, hành vi của số đông trở thành bằng chứng xác thực trực tiếp của chất lượng."
+            : "Asch & Cialdini: Under informational ambiguity, aggregated peer behavior serves as a low-effort heuristic for correctness.",
+          frictionPercent: 12,
+          frictionLevel: isVi ? "Thấp (12%)" : "Low (12%)",
+          frictionBarColor: "bg-emerald-400",
+          backfirePercent: 28,
+          backfireLevel: isVi ? "Kiểm soát được (28%)" : "Controlled (28%)",
+          backfireBarColor: "bg-amber-400",
+          ethicalScore: 90,
+          riskScore: 24
+        },
+        'ikea-effect': {
+          latex: "V_{\\text{perceived}} = V_{\\text{base}} + \\omega \\cdot (\\text{Effort}_{\\text{invested}})^\\gamma",
+          desc: isVi 
+            ? "Norton, Mochon & Ariely: Người dùng định giá sản phẩm cao gấp nhiều lần khi chính họ tự tay bỏ công sức hoàn thiện hoặc cá nhân hóa."
+            : "Norton, Mochon & Ariely: Labor leads to love: self-crafted or customized products command substantial subjective valuation premiums.",
+          frictionPercent: 38,
+          frictionLevel: isVi ? "Đáng kể (38%)" : "Elevated (38%)",
+          frictionBarColor: "bg-amber-400",
+          backfirePercent: 24,
+          backfireLevel: isVi ? "Thấp (24%)" : "Low (24%)",
+          backfireBarColor: "bg-emerald-400",
+          ethicalScore: 96,
+          riskScore: 28
+        },
+        'streaks-and-progress': {
+          latex: "\\text{GoalVelocity} \\propto \\frac{1}{(\\text{DistanceToTarget})^\\eta} \\cdot \\text{EndowedMomentum}",
+          desc: isVi 
+            ? "Nunes & Drèze (Goal Gradient): Tốc độ và tần suất hành vi tăng tốc đột biến khi người dùng nhìn thấy chuỗi ngày liên tiếp hoặc vạch đích ở gần."
+            : "Nunes & Drèze: Effort accelerates monotonically as the perceived psychological distance to goal completion diminishes.",
+          frictionPercent: 16,
+          frictionLevel: isVi ? "Thấp (16%)" : "Low (16%)",
+          frictionBarColor: "bg-emerald-400",
+          backfirePercent: 32,
+          backfireLevel: isVi ? "Trung bình (32%)" : "Moderate (32%)",
+          backfireBarColor: "bg-amber-400",
+          ethicalScore: 92,
+          riskScore: 26
+        }
+      };
+
+      if (formulas[id]) return formulas[id];
+
+      return {
+        latex: "\\text{BehavioralShift} = \\frac{\\text{NeurologicalTrigger} \\times \\text{ContextualSalience}}{\\text{CognitiveInertia} + \\text{PerceivedRisk}}",
+        desc: isVi 
+          ? "Định luật tổng quát: Tỷ lệ chuyển đổi hành vi tỷ lệ thuận với kích thích thần kinh và tính nổi bật, tỷ lệ nghịch với sức ì nhận thức và rủi ro cảm nhận."
+          : "General behavioral law: Conversion probability scales with neural stimulus salience, constrained by cognitive inertia and denominator risk.",
+        frictionPercent: 25,
+        frictionLevel: isVi ? "Trung bình (25%)" : "Moderate (25%)",
+        frictionBarColor: "bg-emerald-400",
+        backfirePercent: 30,
+        backfireLevel: isVi ? "Kiểm soát được (30%)" : "Controlled (30%)",
+        backfireBarColor: "bg-amber-400",
+        ethicalScore: 90,
+        riskScore: 28
+      };
+    }
+
+    function updateValueCalculator() {
+      const impact = parseFloat(document.getElementById('sliderImpact')?.value || 90);
+      const cost = parseFloat(document.getElementById('sliderCost')?.value || 20);
+      const risk = parseFloat(document.getElementById('sliderRisk')?.value || 8);
+      
+      if (document.getElementById('sliderImpactVal')) document.getElementById('sliderImpactVal').textContent = impact;
+      if (document.getElementById('sliderCostVal')) document.getElementById('sliderCostVal').textContent = cost;
+      if (document.getElementById('sliderRiskVal')) document.getElementById('sliderRiskVal').textContent = risk;
+      
+      const val = Math.max(0.1, (impact - cost) / Math.max(0.5, risk));
+      const valDisplay = document.getElementById('livePerceivedValue');
+      const surgeBadge = document.getElementById('liveValueSurge');
+      
+      if (valDisplay) {
+        valDisplay.textContent = val.toFixed(1) + 'x';
+        if (val >= 25) {
+          valDisplay.className = "text-xl sm:text-2xl font-mono font-bold text-emerald-300 animate-pulse";
+        } else if (val >= 10) {
+          valDisplay.className = "text-xl sm:text-2xl font-mono font-bold text-emerald-400";
+        } else {
+          valDisplay.className = "text-xl sm:text-2xl font-mono font-bold text-sky-400";
+        }
+      }
+      if (surgeBadge) {
+        const baseline = (90 - 20) / 8;
+        const surgePercent = Math.round(((val - baseline) / baseline) * 100);
+        const isVi = (currentLang === 'vi');
+        if (surgePercent > 0) {
+          surgeBadge.textContent = `+${surgePercent}% ` + (isVi ? 'Đòn bẩy Giá trị' : 'Value Surge');
+          surgeBadge.className = "text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-medium";
+        } else if (surgePercent === 0) {
+          surgeBadge.textContent = isVi ? 'Mức chuẩn cơ sở' : 'Baseline';
+          surgeBadge.className = "text-[10px] font-mono px-2 py-0.5 rounded bg-white/10 text-white/80 border border-white/15";
+        } else {
+          surgeBadge.textContent = `${surgePercent}% ` + (isVi ? 'Suy giảm giá trị' : 'Value Drag');
+          surgeBadge.className = "text-[10px] font-mono px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/30";
+        }
+      }
+    }
 
     function renderCaseSheet(effect) {
       window.currentActiveEffect = effect;
@@ -1313,6 +1617,7 @@
 
       const whenText = isVi ? effect.useItWhen : (effect.useItWhenEn || effect.useItWhen);
       const revText = isVi ? effect.theReversal : (effect.theReversalEn || effect.theReversal);
+      const effectFormula = getEffectFormula(effect.id, isVi);
 
       // Cards in Section 01
       const cardsHtml = rawCards.map((c, i) => {
@@ -1609,21 +1914,279 @@
           </div>
         </div>
 
+        
+        <!-- CARD 6: 06 · MARKETING EQUATIONS & RISK ENGINE -->
+        <div class="modular-section-card p-6 sm:p-8 space-y-6">
+          <div class="flex items-center justify-between pb-3 border-b border-white/[0.06]">
+            <div class="text-xs font-mono font-semibold tracking-wider flex items-center gap-2">
+              <span class="gradient-section-num text-sm">06 · MARKETING EQUATIONS &amp; RISK ENGINE</span>
+              <span class="text-zinc-500 font-sans font-normal text-xs">${t.sec6Sub}</span>
+            </div>
+            <span class="text-[10px] font-mono text-[#cfe2f8] uppercase tracking-wider px-2.5 py-1 rounded-full bg-[#cfe2f8]/10 border border-[#cfe2f8]/20">NEUROMARKETING CALCULUS</span>
+          </div>
+
+          <!-- Top Block: Interactive Consumer Value Equation & Risk Lever -->
+          <div class="p-6 rounded-2xl bg-gradient-to-br from-[#12161f] via-[#101216] to-[#141418] border border-[#cfe2f8]/25 shadow-2xl space-y-5">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <div class="text-[10px] font-mono text-[#cfe2f8] uppercase tracking-wider">${t.sec6ValTitle}</div>
+                <h3 class="text-xl sm:text-2xl font-normal text-white tracking-tight mt-0.5">Consumer Value Equation &amp; Risk Lever</h3>
+              </div>
+              <span class="text-xs font-mono px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-medium">${isVi ? 'MÔ HÌNH ĐÒN BẨY MẪU SỐ' : 'DENOMINATOR LEVERAGE'}</span>
+            </div>
+
+            <!-- Big Formula Banner -->
+            <div class="p-4 sm:p-5 rounded-xl bg-black/60 border border-white/10 font-mono text-center flex flex-wrap items-center justify-center gap-2 text-sm sm:text-base">
+              <span class="text-white font-semibold">Perceived Value =</span>
+              <div class="inline-flex flex-col items-center">
+                <span class="border-b border-white/40 pb-1 px-3">
+                  <span class="text-sky-300 font-bold">Impact (${isVi ? 'Lợi ích' : 'Benefit'})</span>
+                  <span class="text-white/60 mx-1.5">-</span>
+                  <span class="text-amber-300 font-bold">Cost (${isVi ? 'Chi phí' : 'Cost'})</span>
+                </span>
+                <span class="text-rose-400 font-extrabold pt-1 text-base tracking-wider">Risk (${isVi ? 'Rủi ro cảm nhận — MẪU SỐ' : 'Perceived Risk — DENOMINATOR'})</span>
+              </div>
+            </div>
+
+            <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+              ${t.sec6ValExpl}
+            </p>
+
+            <!-- Interactive Live Slider Simulator -->
+            <div class="p-5 rounded-xl bg-[#0a0c10] border border-white/[0.08] space-y-4">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-white/[0.06]">
+                <span class="text-xs font-mono text-zinc-400">⚡ ${t.sec6SimTitle}:</span>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs text-zinc-400 font-mono">Perceived Value:</span>
+                  <span id="livePerceivedValue" class="text-xl sm:text-2xl font-mono font-bold text-emerald-400">8.8x</span>
+                  <span id="liveValueSurge" class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-medium">+300% ${isVi ? 'Đòn bẩy Giá trị' : 'Value Surge'}</span>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <!-- Impact Slider -->
+                <div class="space-y-1.5">
+                  <div class="flex justify-between text-xs font-mono">
+                    <span class="text-sky-300">Impact (${isVi ? 'Lợi ích' : 'Benefits'}):</span>
+                    <span id="sliderImpactVal" class="text-white font-bold">90</span>
+                  </div>
+                  <input type="range" id="sliderImpact" min="30" max="100" value="90" class="w-full accent-sky-400 cursor-pointer h-1.5 bg-zinc-800 rounded-lg" oninput="updateValueCalculator()"/>
+                  <div class="text-[10px] text-zinc-500 font-mono">${isVi ? 'Nhu cầu & kết quả hứa hẹn' : 'Need & promised outcome'}</div>
+                </div>
+
+                <!-- Cost Slider -->
+                <div class="space-y-1.5">
+                  <div class="flex justify-between text-xs font-mono">
+                    <span class="text-amber-300">Cost (${isVi ? 'Chi phí' : 'Friction'}):</span>
+                    <span id="sliderCostVal" class="text-white font-bold">20</span>
+                  </div>
+                  <input type="range" id="sliderCost" min="5" max="50" value="20" class="w-full accent-amber-400 cursor-pointer h-1.5 bg-zinc-800 rounded-lg" oninput="updateValueCalculator()"/>
+                  <div class="text-[10px] text-zinc-500 font-mono">${isVi ? 'Giá tiền & công sức bỏ ra' : 'Price & friction invested'}</div>
+                </div>
+
+                <!-- Risk Slider (Hero Denominator) -->
+                <div class="space-y-1.5">
+                  <div class="flex justify-between text-xs font-mono">
+                    <span class="text-rose-400 font-semibold">Risk (${isVi ? 'Rủi ro - Mẫu số' : 'Risk - Denominator'}):</span>
+                    <span id="sliderRiskVal" class="text-rose-400 font-bold">8</span>
+                  </div>
+                  <input type="range" id="sliderRisk" min="1" max="20" value="8" class="w-full accent-rose-500 cursor-pointer h-1.5 bg-zinc-800 rounded-lg" oninput="updateValueCalculator()"/>
+                  <div class="text-[10px] text-rose-300/80 font-mono">${isVi ? 'Kéo về 2 để thấy Value vọt lên 35.0x!' : 'Slide to 2 to surge Value to 35.0x!'}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Middle Row: Product Offer Formula + Attention Stimulus + Funnel Pipeline -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Product Offer Formula -->
+            <div class="p-5 rounded-xl bg-[#14151a] border border-white/[0.06] flex flex-col justify-between space-y-3">
+              <div class="space-y-1.5">
+                <div class="text-[10px] font-mono text-[#cfe2f8] uppercase tracking-wider">OFFER BLUEPRINT</div>
+                <h4 class="text-sm font-medium text-white">Product Offer Formula</h4>
+                <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 font-mono text-[11px] text-[#cfe2f8]">
+                  Offer = Need + Outcome + Trigger
+                </div>
+                <p class="text-xs text-zinc-400 leading-relaxed pt-1">
+                  ${t.sec6OfferExpl}
+                </p>
+              </div>
+              <div class="text-[10px] font-mono text-zinc-500 pt-2 border-t border-white/[0.04]">
+                Case: Evian / CoBa's Daughter
+              </div>
+            </div>
+
+            <!-- Attention Stimulus Formula -->
+            <div class="p-5 rounded-xl bg-[#14151a] border border-white/[0.06] flex flex-col justify-between space-y-3">
+              <div class="space-y-1.5">
+                <div class="text-[10px] font-mono text-purple-300 uppercase tracking-wider">NEUROLOGICAL HOOK</div>
+                <h4 class="text-sm font-medium text-white">Attention Stimulus (RAS)</h4>
+                <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 font-mono text-[11px] text-purple-300">
+                  Attention = Personal × Pleasant × Surprising × Easy
+                </div>
+                <p class="text-xs text-zinc-400 leading-relaxed pt-1">
+                  ${t.sec6AttnExpl}
+                </p>
+              </div>
+              <div class="text-[10px] font-mono text-zinc-500 pt-2 border-t border-white/[0.04]">
+                ${isVi ? 'Kích hoạt Hệ lưới lọc Reticular' : 'Reticular Activating System'}
+              </div>
+            </div>
+
+            <!-- Application Funnel Pipeline -->
+            <div class="p-5 rounded-xl bg-[#14151a] border border-white/[0.06] flex flex-col justify-between space-y-3">
+              <div class="space-y-1.5">
+                <div class="text-[10px] font-mono text-amber-300 uppercase tracking-wider">DIAGNOSTIC PIPELINE</div>
+                <h4 class="text-sm font-medium text-white">Behavioral Funnel Pipeline</h4>
+                <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 font-mono text-[11px] text-amber-300">
+                  Issue → Barrier → Solution → Psychology
+                </div>
+                <p class="text-xs text-zinc-400 leading-relaxed pt-1">
+                  ${t.sec6PipelineExpl}
+                </p>
+              </div>
+              <div class="text-[10px] font-mono text-zinc-500 pt-2 border-t border-white/[0.04]">
+                ${isVi ? 'Quy trình chẩn đoán 4 bước' : '4-Step Diagnostic Protocol'}
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Row: Dynamic Effect-Specific Mathematical Equation & Risk Sensitivity Radar -->
+          <div class="p-6 rounded-xl bg-[#14151a] border border-white/[0.08] space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-white/[0.06]">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-[#cfe2f8]"></span>
+                <span class="text-xs font-mono uppercase tracking-wider text-white">
+                  ${isVi ? 'MÔ HÌNH TOÁN HỌC & MA TRẬN RỦI RO:' : 'MATHEMATICAL EQUATION & RISK MATRIX:'}
+                  <strong class="text-[#cfe2f8]">${titleMain}</strong>
+                </span>
+              </div>
+              <span class="text-[10px] font-mono text-zinc-500">${effect.foundation}</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+              <!-- Left: Effect Behavioral Equation -->
+              <div class="md:col-span-7 space-y-3">
+                <div class="p-4 rounded-xl bg-black/50 border border-white/10 font-mono text-xs text-[#cfe2f8] space-y-2">
+                  <div class="text-[10px] text-zinc-500 uppercase tracking-widest">${isVi ? 'PHƯƠNG TRÌNH KINH TẾ HỌC HÀNH VI' : 'BEHAVIORAL ECONOMICS EQUATION'}</div>
+                  <div class="text-sm sm:text-base font-bold text-white break-words">${effectFormula.latex}</div>
+                  <div class="text-[11px] text-zinc-300 font-sans pt-1 leading-relaxed">${effectFormula.desc}</div>
+                </div>
+              </div>
+
+              <!-- Right: Risk & Sensitivity Gauge -->
+              <div class="md:col-span-5 p-4 rounded-xl bg-black/40 border border-white/5 space-y-3">
+                <div class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider flex justify-between">
+                  <span>${isVi ? 'MA TRẬN NHẠY CẢM RỦI RO' : 'RISK SENSITIVITY RADAR'}</span>
+                  <span class="text-amber-400 font-bold">${effectFormula.riskScore}/100</span>
+                </div>
+
+                <!-- Bar 1: Consumer Friction -->
+                <div class="space-y-1 text-[11px] font-mono">
+                  <div class="flex justify-between text-zinc-400">
+                    <span>${isVi ? 'Rào cản nhận thức (Friction):' : 'Cognitive Friction:'}</span>
+                    <span class="text-white font-medium">${effectFormula.frictionLevel}</span>
+                  </div>
+                  <div class="w-full h-1.5 rounded-full bg-white/10 overflow-hidden">
+                    <div class="h-full ${effectFormula.frictionBarColor} rounded-full" style="width: ${effectFormula.frictionPercent}%"></div>
+                  </div>
+                </div>
+
+                <!-- Bar 2: Backfire / Reactance Risk -->
+                <div class="space-y-1 text-[11px] font-mono">
+                  <div class="flex justify-between text-zinc-400">
+                    <span>${isVi ? 'Rủi ro phản ứng ngược (Backfire):' : 'Backfire / Reactance Risk:'}</span>
+                    <span class="text-white font-medium">${effectFormula.backfireLevel}</span>
+                  </div>
+                  <div class="w-full h-1.5 rounded-full bg-white/10 overflow-hidden">
+                    <div class="h-full ${effectFormula.backfireBarColor} rounded-full" style="width: ${effectFormula.backfirePercent}%"></div>
+                  </div>
+                </div>
+
+                <!-- Bar 3: Ethical & Compliance Rating -->
+                <div class="space-y-1 text-[11px] font-mono">
+                  <div class="flex justify-between text-zinc-400">
+                    <span>${isVi ? 'Chỉ số đạo đức (White-hat Index):' : 'Ethical / White-hat Index:'}</span>
+                    <span class="text-emerald-400 font-medium">${effectFormula.ethicalScore}%</span>
+                  </div>
+                  <div class="w-full h-1.5 rounded-full bg-white/10 overflow-hidden">
+                    <div class="h-full bg-emerald-400 rounded-full" style="width: ${effectFormula.ethicalScore}%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
         <!-- FOOTER METADATA CITATION BAR -->
         <div class="p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[11px] font-mono text-[var(--text-dimmer)]">
           <div>${isVi ? 'NỀN TẢNG HỌC THUẬT' : 'FOUNDATION'} · ${effect.foundation} ↗</div>
           <div>${isVi ? 'BÀI HỌC' : 'COURSE'} · ${effect.courseRef}</div>
         </div>
       `;
+      updateValueCalculator();
     }
 
     // -------------------------------------------------------------
-    // RENDER LIBRARY DIRECTORY (67 effects)
+    // RENDER LIBRARY DIRECTORY (Dimension Studios Bento Architecture)
     // -------------------------------------------------------------
     let currentClusterFilter = 'all';
+    let currentViewMode = 'bento'; // 'bento' or 'compact'
+    let currentPage = 1;
+    const PAGE_SIZE = 12;
+    let viewAllPages = false;
+
+    function setViewMode(mode) {
+      currentViewMode = mode;
+      const bentoBtn = document.getElementById('viewBtnBento');
+      const compactBtn = document.getElementById('viewBtnCompact');
+      if (mode === 'bento') {
+        if (bentoBtn) bentoBtn.className = "px-3.5 py-1.5 rounded-full text-xs font-medium transition bg-[#cfe2f8] text-[#091322] shadow-sm flex items-center gap-1.5";
+        if (compactBtn) compactBtn.className = "px-3.5 py-1.5 rounded-full text-xs font-medium transition text-[var(--text-dim)] hover:text-white flex items-center gap-1.5";
+      } else {
+        if (compactBtn) compactBtn.className = "px-3.5 py-1.5 rounded-full text-xs font-medium transition bg-[#cfe2f8] text-[#091322] shadow-sm flex items-center gap-1.5";
+        if (bentoBtn) bentoBtn.className = "px-3.5 py-1.5 rounded-full text-xs font-medium transition text-[var(--text-dim)] hover:text-white flex items-center gap-1.5";
+      }
+      const searchVal = document.getElementById('libSearch') ? document.getElementById('libSearch').value : '';
+      renderLibrary(searchVal);
+    }
+
+    function toggleViewAllPages() {
+      viewAllPages = !viewAllPages;
+      const searchVal = document.getElementById('libSearch') ? document.getElementById('libSearch').value : '';
+      renderLibrary(searchVal);
+    }
+
+    function changePage(p) {
+      currentPage = p;
+      const searchVal = document.getElementById('libSearch') ? document.getElementById('libSearch').value : '';
+      renderLibrary(searchVal);
+      document.getElementById('library-grid')?.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function filterDirectory(cluster) {
+      currentClusterFilter = cluster;
+      currentPage = 1;
+      document.querySelectorAll('.dir-pill').forEach(btn => {
+        btn.classList.remove('active', 'bg-[#cfe2f8]', 'text-[#091322]');
+        btn.classList.add('text-[var(--text-dim)]', 'bg-white/[0.03]');
+      });
+      if (event && event.target) {
+        event.target.classList.add('active', 'bg-[#cfe2f8]', 'text-[#091322]');
+        event.target.classList.remove('text-[var(--text-dim)]', 'bg-white/[0.03]');
+      }
+      
+      const searchVal = document.getElementById('libSearch') ? document.getElementById('libSearch').value : '';
+      renderLibrary(searchVal);
+    }
 
     function renderLibrary(searchQuery = '') {
       const list = document.getElementById('libraryList');
+      if (!list) return;
+      const paginationEl = document.getElementById('libraryPagination');
+      const countEl = document.getElementById('dirCountText');
+      const statusEl = document.getElementById('dirPageStatus');
       const isVi = (currentLang === 'vi');
       const t = I18N[currentLang] || I18N.vi;
       const q = searchQuery.toLowerCase().trim();
@@ -1640,59 +2203,172 @@
         return matchesCluster && matchesQuery;
       });
 
+      if (countEl) {
+        countEl.textContent = t.showingCount.replace('{n}', filtered.length);
+      }
+
       if (filtered.length === 0) {
-        list.innerHTML = `<div class="col-span-full py-16 text-center text-xs text-[var(--text-dim)] font-mono">${t.emptySearch.replace('{q}', searchQuery)}</div>`;
+        list.className = "grid grid-cols-1";
+        list.innerHTML = `<div class="py-16 text-center text-xs text-[var(--text-dim)] font-mono">${t.emptySearch.replace('{q}', searchQuery)}</div>`;
+        if (paginationEl) paginationEl.innerHTML = '';
+        if (statusEl) statusEl.textContent = '';
         return;
       }
 
-      list.innerHTML = filtered.map(item => {
-        const titlePrimary = isVi ? item.nameVi : item.nameEn;
-        const titleSecondary = isVi ? item.nameEn : item.nameVi;
-        const excerpt = isVi ? item.plainLanguage : (item.plainLanguageEn || item.plainLanguage);
+      // Pagination calculation: When viewing all without search, paginate by 12 to eliminate eye-strain
+      const shouldPaginate = (currentClusterFilter === 'all' && !q && !viewAllPages);
+      const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
+      if (currentPage > totalPages) currentPage = 1;
 
-        return `
-          <div onclick="selectEffect('${item.id}')" class="p-5 rounded-xl bg-[#1a1a1c] border border-white/[0.06] hover:border-white/20 transition cursor-pointer group flex flex-col justify-between space-y-4 hover:-translate-y-0.5">
-            <div class="space-y-2">
-              <div class="flex items-center justify-between text-[10px] font-mono text-[var(--text-dimmer)]">
-                <span class="uppercase tracking-wider">${item.category}</span>
-                <span class="inline-flex items-center gap-1.5 text-white/80">
-                  <span class="text-[#cfe2f8]">${item.brandLogo}</span>
-                  <span>${item.brand}</span>
+      const displayList = shouldPaginate 
+        ? filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE)
+        : filtered;
+
+      if (statusEl) {
+        statusEl.textContent = shouldPaginate ? t.pageStatus.replace('{cur}', currentPage).replace('{total}', totalPages) : '';
+      }
+
+      // Render items
+      if (currentViewMode === 'bento') {
+        list.className = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6";
+        list.innerHTML = displayList.map(item => {
+          const titlePrimary = isVi ? item.nameVi : item.nameEn;
+          const titleSecondary = isVi ? item.nameEn : item.nameVi;
+          const excerpt = isVi ? item.plainLanguage : (item.plainLanguageEn || item.plainLanguage);
+          const isPhoto = item.watchItWorkImage && (item.watchItWorkImage.startsWith('data:image') || item.watchItWorkImage.startsWith('http'));
+
+          const visualHeader = isPhoto
+            ? `<div class="relative h-44 sm:h-48 w-full overflow-hidden bg-[#090a0d]">
+                 <img src="${item.watchItWorkImage}" alt="${item.nameEn}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
+                 <div class="absolute inset-0 bg-gradient-to-t from-[#131418] via-transparent to-black/30 pointer-events-none"></div>
+                 <div class="absolute top-3 left-3 backdrop-blur-md bg-black/60 border border-white/20 text-white/90 text-[10px] font-mono uppercase px-3 py-1 rounded-full shadow-lg">
+                   ${item.category}
+                 </div>
+                 <div class="absolute top-3 right-3 backdrop-blur-md bg-black/70 border border-white/15 text-white text-[10px] font-mono px-2.5 py-1 rounded-full shadow-lg flex items-center gap-1.5">
+                   <span class="text-[#cfe2f8]">${item.brandLogo}</span>
+                   <span class="font-medium">${item.brand}</span>
+                 </div>
+               </div>`
+            : `<div class="relative h-44 sm:h-48 w-full overflow-hidden bg-gradient-to-br from-[#181a24] to-[#0d0e14] flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-500 ease-out">
+                 <div class="w-full max-h-36 overflow-hidden opacity-90">${item.watchItWorkImage}</div>
+                 <div class="absolute inset-0 bg-gradient-to-t from-[#131418] via-transparent to-black/20 pointer-events-none"></div>
+                 <div class="absolute top-3 left-3 backdrop-blur-md bg-black/60 border border-white/20 text-white/90 text-[10px] font-mono uppercase px-3 py-1 rounded-full shadow-lg">
+                   ${item.category}
+                 </div>
+                 <div class="absolute top-3 right-3 backdrop-blur-md bg-black/70 border border-white/15 text-white text-[10px] font-mono px-2.5 py-1 rounded-full shadow-lg flex items-center gap-1.5">
+                   <span class="text-[#cfe2f8]">${item.brandLogo}</span>
+                   <span class="font-medium">${item.brand}</span>
+                 </div>
+               </div>`;
+
+          return `
+            <div onclick="selectEffect('${item.id}')" class="group relative rounded-2xl overflow-hidden bg-[#131418] border border-white/[0.08] hover:border-white/25 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)] cursor-pointer flex flex-col justify-between">
+              <div>
+                ${visualHeader}
+                <div class="p-5 sm:p-6 space-y-2.5">
+                  <div class="text-[10px] font-mono text-[var(--text-dimmer)] uppercase tracking-wider">
+                    ${item.badge}
+                  </div>
+                  <div class="space-y-1">
+                    <h3 class="text-lg font-medium text-white group-hover:text-[#cfe2f8] transition-colors leading-snug tracking-tight">
+                      ${titlePrimary}
+                    </h3>
+                    <div class="text-xs text-[#cfe2f8]/70 font-normal">
+                      ${titleSecondary}
+                    </div>
+                  </div>
+                  <p class="text-xs text-zinc-400 line-clamp-2 leading-relaxed pt-1">
+                    ${excerpt}
+                  </p>
+                </div>
+              </div>
+              <div class="px-5 sm:px-6 pb-5 pt-3 border-t border-white/[0.05] flex items-center justify-between text-xs font-mono text-zinc-400 group-hover:text-white transition-colors">
+                <span class="text-[11px] text-zinc-500 font-mono">${item.brand} · Cannes / Global</span>
+                <span class="inline-flex items-center gap-1.5 text-[#cfe2f8] font-medium">
+                  <span>${t.viewCase}</span>
+                  <span class="group-hover:translate-x-1 transition-transform">→</span>
                 </span>
               </div>
-              
-              <div class="space-y-1.5">
-                <h4 class="text-base sm:text-[1.05rem] font-medium text-white group-hover:text-[#cfe2f8] transition tracking-tight leading-snug">${titlePrimary}</h4>
-                <div class="text-xs text-[#cfe2f8]/75 leading-relaxed font-normal">${titleSecondary}</div>
+            </div>
+          `;
+        }).join('');
+      } else {
+        // Compact List View
+        list.className = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4";
+        list.innerHTML = displayList.map(item => {
+          const titlePrimary = isVi ? item.nameVi : item.nameEn;
+          const titleSecondary = isVi ? item.nameEn : item.nameVi;
+          const excerpt = isVi ? item.plainLanguage : (item.plainLanguageEn || item.plainLanguage);
+
+          return `
+            <div onclick="selectEffect('${item.id}')" class="p-5 rounded-xl bg-[#141416] border border-white/[0.06] hover:border-white/20 transition cursor-pointer group flex flex-col justify-between space-y-3 hover:-translate-y-0.5">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between text-[10px] font-mono text-[var(--text-dimmer)]">
+                  <span class="uppercase tracking-wider">${item.category}</span>
+                  <span class="inline-flex items-center gap-1.5 text-white/80">
+                    <span class="text-[#cfe2f8]">${item.brandLogo}</span>
+                    <span>${item.brand}</span>
+                  </span>
+                </div>
+                <div class="space-y-1">
+                  <h4 class="text-base font-medium text-white group-hover:text-[#cfe2f8] transition tracking-tight">${titlePrimary}</h4>
+                  <div class="text-xs text-[#cfe2f8]/75 leading-relaxed font-normal">${titleSecondary}</div>
+                </div>
+                <p class="text-xs text-[var(--text-dim)] line-clamp-2 leading-relaxed">
+                  ${excerpt}
+                </p>
               </div>
-
-              <p class="text-xs text-[var(--text-dim)] line-clamp-2 leading-relaxed pt-1">
-                ${excerpt}
-              </p>
+              <div class="pt-3 border-t border-white/[0.04] text-[11px] text-[var(--text-dimmer)] flex items-center justify-between font-mono">
+                <span class="group-hover:text-white transition">${t.viewCase}</span>
+                <span class="text-[#cfe2f8] group-hover:translate-x-1 transition">→</span>
+              </div>
             </div>
+          `;
+        }).join('');
+      }
 
-            <div class="pt-3 border-t border-white/[0.04] text-[11px] text-[var(--text-dimmer)] flex items-center justify-between font-mono">
-              <span class="group-hover:text-white transition">${t.viewCase}</span>
-              <span class="text-[#cfe2f8] group-hover:translate-x-1 transition">→</span>
+      // Render Pagination Bar
+      if (paginationEl) {
+        if (!shouldPaginate) {
+          if (currentClusterFilter === 'all' && !q) {
+            paginationEl.innerHTML = `
+              <div>${t.showingCount.replace('{n}', filtered.length)}</div>
+              <button onclick="toggleViewAllPages()" class="px-3.5 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] text-xs font-mono text-[#cfe2f8] border border-white/10 transition">
+                ${t.viewPagedBtn}
+              </button>
+            `;
+          } else {
+            paginationEl.innerHTML = `<div>${t.showingCount.replace('{n}', filtered.length)}</div><div></div>`;
+          }
+        } else {
+          let pageBtns = '';
+          for (let p = 1; p <= totalPages; p++) {
+            if (p === currentPage) {
+              pageBtns += `<button class="w-8 h-8 rounded-lg bg-[#cfe2f8] text-[#091322] font-bold text-xs font-mono shadow-sm">${p}</button>`;
+            } else {
+              pageBtns += `<button onclick="changePage(${p})" class="w-8 h-8 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-white/80 text-xs font-mono transition border border-white/[0.06]">${p}</button>`;
+            }
+          }
+
+          paginationEl.innerHTML = `
+            <div class="flex items-center gap-2">
+              <button onclick="changePage(${Math.max(1, currentPage - 1)})" ${currentPage === 1 ? 'disabled class="px-3 py-1.5 rounded-lg bg-white/[0.02] text-zinc-600 cursor-not-allowed border border-white/[0.04]"' : 'class="px-3 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-white border border-white/[0.08] transition"'}>
+                ◀ ${t.pagePrev}
+              </button>
+              <div class="flex items-center gap-1.5">${pageBtns}</div>
+              <button onclick="changePage(${Math.min(totalPages, currentPage + 1)})" ${currentPage === totalPages ? 'disabled class="px-3 py-1.5 rounded-lg bg-white/[0.02] text-zinc-600 cursor-not-allowed border border-white/[0.04]"' : 'class="px-3 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-white border border-white/[0.08] transition"'}>
+                ${t.pageNext} ▶
+              </button>
             </div>
-          </div>
-        `;
-      }).join('');
+            <button onclick="toggleViewAllPages()" class="px-3.5 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] text-xs font-mono text-[#cfe2f8] border border-white/10 transition">
+              ${t.viewAllBtn}
+            </button>
+          `;
+        }
+      }
     }
-
-    function filterDirectory(cluster) {
-      currentClusterFilter = cluster;
-      document.querySelectorAll('.dir-pill').forEach(btn => {
-        btn.classList.remove('active', 'bg-[#cfe2f8]', 'text-[#091322]');
-        btn.classList.add('text-[var(--text-dim)]', 'bg-white/[0.03]');
-      });
-      event.target.classList.add('active', 'bg-[#cfe2f8]', 'text-[#091322]');
-      event.target.classList.remove('text-[var(--text-dim)]', 'bg-white/[0.03]');
-      
-      const searchVal = document.getElementById('libSearch') ? document.getElementById('libSearch').value : '';
-      renderLibrary(searchVal);
-    }
-
+    
+    
     function selectEffect(id) {
       const e = fullList.find(item => item.id === id);
       if (e) {
