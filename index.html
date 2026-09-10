@@ -68,6 +68,7 @@
         display: block !important;
       }
     }
+    @media (min-width: 1024px) {
       .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
       .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
       .lg\:grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)) !important; }
@@ -76,6 +77,45 @@
       .lg\:col-span-6 { grid-column: span 6 / span 6 !important; }
       .lg\:col-span-7 { grid-column: span 7 / span 7 !important; }
       .lg\:col-span-8 { grid-column: span 8 / span 8 !important; }
+    }
+
+    /* Animated Creator Tab Floating & Luminous Aura */
+    @keyframes creatorFloat {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-4px);
+      }
+    }
+    @keyframes creatorPulseGlow {
+      0%, 100% {
+        box-shadow: 0 4px 20px -5px rgba(56, 189, 248, 0.15), 0 0 1px 1px rgba(56, 189, 248, 0.25);
+        border-color: rgba(56, 189, 248, 0.3);
+      }
+      50% {
+        box-shadow: 0 8px 25px -4px rgba(56, 189, 248, 0.3), 0 0 1px 1px rgba(125, 211, 252, 0.5);
+        border-color: rgba(125, 211, 252, 0.55);
+      }
+    }
+    @keyframes sweepLight {
+      0% {
+        transform: translateX(-150%) skewX(-20deg);
+      }
+      100% {
+        transform: translateX(250%) skewX(-20deg);
+      }
+    }
+    .creator-animated-tab {
+      animation: creatorFloat 5s ease-in-out infinite, creatorPulseGlow 3.5s ease-in-out infinite;
+      will-change: transform, box-shadow;
+    }
+    .creator-animated-tab:hover {
+      animation-play-state: paused;
+    }
+    .creator-shimmer-sweep {
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), rgba(56, 189, 248, 0.12), rgba(255, 255, 255, 0.05), transparent);
+      animation: sweepLight 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     }
 
     /* ===================================================
@@ -747,44 +787,69 @@
   </nav>
 
   <!-- 1. HERO SECTION: TRANSLUCENT 3D BRAIN SURFACE (Nằm ở trên đầu) -->
-  <header id="hero-3d" class="max-w-7xl mx-auto px-6 lg:px-12 pt-10 pb-8">
-    <div class="max-w-3xl mb-8 space-y-3">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-[var(--text-dim)] text-xs font-mono">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#cfe2f8]"></span>
-        <span id="heroBadgeText">TRANSLUCENT 3D DUAL-HEMISPHERE BRAIN</span>
-      </div>
-
-      <h1 class="text-4xl sm:text-5xl lg:text-[3.4rem] font-normal tracking-tight leading-tight">
-        <span class="gradient-hero-title">Human Behavior Atlas for Marketers.</span><br>
-        <span id="heroSubtitleText" class="text-2xl sm:text-3xl lg:text-4xl font-normal text-white/50">67 Hiệu ứng Tâm lý học Hành vi &amp; Phễu Tăng trưởng</span>
-      </h1>
-
-      <p id="heroDescText" class="text-sm text-[var(--text-dim)] max-w-2xl leading-relaxed">Hệ thống hóa toàn diện 67 hiệu ứng tâm lý học hành vi & kinh tế học thần kinh áp dụng thực chiến cho Marketing & Phễu tăng trưởng (Growth Funnel). Đi kèm case study chính thức từ các chiến dịch đoạt giải Cannes Lions, D&AD, Effie và các thương hiệu hàng đầu toàn cầu (Apple, Nike, KFC, Heineken, Starbucks, IKEA, Supreme, Duolingo...).
-      </p>
-
-      <!-- Creator Intro Callout (Compact, Attention-Drawing) -->
-      <div class="mt-4 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#141724]/90 via-[#10121a]/90 to-[#0c0e14]/90 border border-sky-400/25 backdrop-blur-xl shadow-lg space-y-2.5 max-w-2xl font-['Manrope']">
-        <div class="flex flex-wrap items-center justify-between gap-2.5">
-          <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-sky-400"></span>
-            <span class="font-bold text-white text-sm tracking-tight font-['Manrope']">Tào My (Arie)</span>
-            <span class="text-zinc-600 text-xs font-normal">·</span>
-            <span class="text-[11px] text-sky-300 font-medium font-mono">Brand &amp; Growth Marketer</span>
-          </div>
-
-          <a href="https://www.linkedin.com/in/taogiangmy/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0077b5]/15 hover:bg-[#0077b5]/30 border border-[#0077b5]/40 text-xs font-semibold text-[#cfe2f8] hover:text-white transition shadow-sm group">
-            <svg class="w-3.5 h-3.5 fill-[#0077b5] group-hover:scale-110 transition-transform shrink-0" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-            <span>connect me on LinkedIn</span>
-            <span class="text-zinc-400 text-[10px]">↗</span>
-          </a>
+  <header id="hero-3d" class="max-w-7xl mx-auto px-6 lg:px-12 pt-10 pb-8 font-['Manrope']">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center mb-8">
+      
+      <!-- Left Column: Title, Subtitle, Description -->
+      <div class="lg:col-span-7 xl:col-span-7 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-[var(--text-dim)] text-xs font-mono">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#cfe2f8]"></span>
+          <span id="heroBadgeText">TRANSLUCENT 3D DUAL-HEMISPHERE BRAIN</span>
         </div>
 
-        <p class="text-xs sm:text-[13px] text-zinc-300 leading-relaxed font-normal">
-          I came to marketing through a fascination with human behavior. Somewhere along the way, I fell down the rabbit hole of behavioral economics and neuromarketing, and started putting what I found into one open reference for marketers.
+        <h1 class="text-3xl sm:text-4xl lg:text-[2.9rem] font-normal tracking-tight leading-tight">
+          <span class="gradient-hero-title">Human Behavior Atlas for Marketers.</span><br>
+          <span id="heroSubtitleText" class="text-xl sm:text-2xl lg:text-3xl font-normal text-white/50">67 Hiệu ứng Tâm lý học Hành vi &amp; Phễu Tăng trưởng</span>
+        </h1>
+
+        <p id="heroDescText" class="text-xs sm:text-[13px] text-[var(--text-dim)] max-w-xl leading-relaxed">Hệ thống hóa toàn diện 67 hiệu ứng tâm lý học hành vi & kinh tế học thần kinh áp dụng thực chiến cho Marketing & Phễu tăng trưởng (Growth Funnel). Đi kèm case study chính thức từ các chiến dịch đoạt giải Cannes Lions, D&AD, Effie và các thương hiệu hàng đầu toàn cầu (Apple, Nike, KFC, Heineken, Starbucks, IKEA, Supreme, Duolingo...).
         </p>
       </div>
-    </div>
 
+      <!-- Right Column: Compact Animated Creator Card (Tào My - Arie) -->
+      <div class="lg:col-span-5 xl:col-span-5 flex justify-start lg:justify-end">
+        <div class="creator-animated-tab w-full max-w-md p-3.5 sm:p-4 rounded-2xl bg-gradient-to-br from-[#131622]/95 via-[#0e1017]/95 to-[#0a0c12]/95 border border-sky-400/30 backdrop-blur-xl shadow-xl space-y-2.5 relative overflow-hidden group transition-all duration-300 hover:scale-[1.02] hover:border-sky-400/60 font-['Manrope']">
+          
+          <!-- Subtle ambient flare & shimmering light sweep -->
+          <div class="absolute -top-10 -right-10 w-28 h-28 bg-sky-500/10 rounded-full blur-2xl pointer-events-none group-hover:bg-sky-400/20 transition-all duration-500"></div>
+          <div class="creator-shimmer-sweep pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+          <!-- Top Row: Creator Identity & LinkedIn Button -->
+          <div class="flex items-center justify-between gap-2 relative z-10">
+            <div class="flex items-center gap-2 min-w-0">
+              <!-- Live Pulsing Beacon -->
+              <span class="relative flex h-2.5 w-2.5 shrink-0">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sky-400 shadow-[0_0_8px_rgba(56,189,248,0.8)]"></span>
+              </span>
+              <span class="font-bold text-white text-[13px] tracking-tight font-['Manrope'] whitespace-nowrap">Tào My (Arie)</span>
+              <span class="text-zinc-600 text-xs font-normal shrink-0">·</span>
+              <span class="text-[10px] text-sky-300 font-medium font-mono truncate">Brand &amp; Growth Marketer</span>
+            </div>
+
+            <a href="https://www.linkedin.com/in/taogiangmy/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#0077b5]/15 hover:bg-[#0077b5]/35 border border-[#0077b5]/40 hover:border-[#0077b5]/70 text-[10.5px] font-semibold text-[#cfe2f8] hover:text-white transition shadow-sm group/btn shrink-0 whitespace-nowrap">
+              <svg class="w-3 h-3 fill-[#0077b5] group-hover/btn:scale-110 transition-transform shrink-0" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+              <span>connect me on LinkedIn</span>
+              <span class="text-sky-300/70 text-[9px]">↗</span>
+            </a>
+          </div>
+
+          <!-- Quote text (Compact, Elegant, Pure Manrope) -->
+          <p class="text-[11px] sm:text-[11.5px] text-zinc-300/90 leading-relaxed font-normal relative z-10">
+            I came to marketing through a fascination with human behavior. Somewhere along the way, I fell down the rabbit hole of behavioral economics and neuromarketing, and started putting what I found into one open reference for marketers.
+          </p>
+
+          <!-- Bottom subtle badge: Knowledge Project -->
+          <div class="pt-1.5 border-t border-white/[0.06] flex items-center justify-between text-[9.5px] font-mono text-zinc-500 relative z-10">
+            <span>CURATED KNOWLEDGE ATLAS</span>
+            <span class="text-sky-400/80 font-medium">OPEN REFERENCE</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    
     <!-- Translucent 3D Brain Canvas Workspace -->
     <div class="product-surface overflow-hidden shadow-2xl relative">
       
@@ -4079,8 +4144,8 @@ Kết quả: Chiến dịch tạo ra hơn 1.1 tỷ lượt hiển thị tự nhi
                   <span>${t.sec4ModalBtn}</span>
                   <span class="text-[11px]">🔍</span>
                 </button>
-                <a href="${effect.primaryCaseUrl || '#'}" target="_blank" rel="noopener noreferrer" class="text-xs text-[#cfe2f8] hover:underline font-mono inline-flex items-center gap-1.5 py-2 px-3.5 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-[#cfe2f8]/40 transition">
-                  <span>${t.sec4ReadSource} ${(isVi ? effect.primaryCaseSourceLabelVi : effect.primaryCaseSourceLabel) || (isVi ? 'Phân tích case chuyên sâu' : 'Case Teardown')}</span>
+                <a href="${effect.primaryCaseUrl || '#'}" target="_blank" rel="noopener noreferrer" class="text-xs text-[#cfe2f8] hover:underline font-mono inline-flex items-center gap-1.5 py-2 px-3 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-[#cfe2f8]/40 transition whitespace-nowrap">
+                  <span>${isVi ? 'Đọc case gốc' : 'Read original case'} · ${((isVi ? (effect.primaryCaseSourceLabelVi || effect.primaryCaseSourceLabel) : effect.primaryCaseSourceLabel) || 'Wikipedia').split('(')[0].trim()}</span>
                   <span class="text-[11px]">↗</span>
                 </a>
               </div>
@@ -4124,128 +4189,128 @@ Kết quả: Chiến dịch tạo ra hơn 1.1 tỷ lượt hiển thị tự nhi
         </div>
 
         <!-- CARD 6: 06 · MARKETING EQUATIONS & RISK ENGINE (MCKINSEY BULLETPROOF METHOD) -->
-        <div class="modular-section-card p-6 sm:p-9 space-y-8 font-['Manrope']">
+        <div class="modular-section-card p-5 sm:p-7 space-y-6 font-['Manrope']">
           
           <!-- Section Header -->
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-white/[0.08]">
-            <div class="flex items-center gap-3">
-              <span class="px-3 py-1 rounded-lg bg-sky-500/10 border border-sky-400/25 text-[#cfe2f8] font-bold text-xs tracking-wider uppercase font-mono">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pb-4 border-b border-white/[0.08]">
+            <div class="flex items-center gap-2.5">
+              <span class="px-2.5 py-1 rounded-lg bg-sky-500/10 border border-sky-400/25 text-[#cfe2f8] font-bold text-[11px] tracking-wider uppercase font-mono whitespace-nowrap">
                 06 · MARKETING EQUATIONS &amp; RISK ENGINE
               </span>
               <span class="text-zinc-400 text-xs hidden sm:inline font-medium">${t.sec6Sub}</span>
             </div>
-            <span class="text-[11px] font-mono font-semibold text-zinc-300 tracking-wider px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] flex items-center gap-2 self-start sm:self-auto">
+            <span class="text-[10.5px] font-mono font-semibold text-zinc-300 tracking-wider px-2.5 py-0.5 rounded-full bg-white/[0.03] border border-white/[0.08] flex items-center gap-1.5 self-start sm:self-auto whitespace-nowrap">
               <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
               <span>${isVi ? 'PHƯƠNG PHÁP BULLETPROOF (MCKINSEY)' : 'MCKINSEY BULLETPROOF METHOD'}</span>
             </span>
           </div>
 
           <!-- Hero Cockpit: Interactive Consumer Value Equation & Denominator Leverage -->
-          <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-b from-[#141722] via-[#0f1118] to-[#0a0c10] border border-white/[0.1] shadow-2xl relative overflow-hidden space-y-6">
+          <div class="p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#141722] via-[#0f1118] to-[#0a0c10] border border-white/[0.1] shadow-2xl relative overflow-hidden space-y-4">
             
-            <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
-              <div class="space-y-1.5">
-                <div class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-sky-300 uppercase tracking-wider">
+            <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-3">
+              <div class="space-y-1">
+                <div class="inline-flex items-center gap-2 text-[10.5px] font-mono font-semibold text-sky-300 uppercase tracking-wider">
                   <span>${isVi ? '[ CÂY ĐÒN BẨY GIÁ TRỊ CẢM NHẬN ]' : '[ CONSUMER VALUE DRIVER TREE ]'}</span>
                 </div>
-                <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                <h3 class="text-lg sm:text-xl font-bold text-white tracking-tight leading-snug">
                   ${isVi ? 'Phương Trình Giá Trị Cảm Nhận & Đòn Bẩy Mẫu Số' : 'Perceived Value Equation & Denominator Leverage'}
                 </h3>
-                <p class="text-xs sm:text-[13px] text-zinc-300 max-w-2xl leading-relaxed font-normal">
+                <p class="text-[11px] sm:text-xs text-zinc-300 max-w-2xl leading-relaxed font-normal">
                   ${isVi 
-                    ? 'Khách hàng không dừng mua vì sản phẩm thiếu tính năng, mà dừng lại vì <strong class="text-white">nỗi sợ rủi ro</strong> (sợ hớ giá, sợ phiền phức, sợ hối hận). Về mặt toán học, rủi ro nằm ở <strong class="text-emerald-300 font-mono">MẪU SỐ</strong> — triệt tiêu rủi ro giúp nhân cấp số nhân giá trị cảm nhận mà không cần giảm một đồng giá bán!' 
+                    ? 'Khách hàng không dừng mua vì sản phẩm thiếu tính năng, mà dừng lại vì <strong class="text-white">nỗi sợ rủi ro</strong>. Về mặt toán học, rủi ro nằm ở <strong class="text-emerald-300 font-mono">MẪU SỐ</strong> — triệt tiêu rủi ro giúp nhân cấp số nhân giá trị cảm nhận mà không cần giảm một đồng giá bán!' 
                     : 'Consumers rarely churn due to missing features; they stall due to <strong class="text-white">perceived risk</strong>. In behavioral math, risk sits in the <strong class="text-emerald-300 font-mono">DENOMINATOR</strong> — compressing risk yields exponential value multipliers without discounting prices!'}
                 </p>
               </div>
 
-              <div class="shrink-0 flex items-center gap-3 self-start md:self-auto bg-black/60 border border-white/10 p-3.5 px-5 rounded-2xl backdrop-blur-md">
+              <div class="shrink-0 flex items-center gap-3 self-start md:self-auto bg-black/60 border border-white/10 p-2.5 px-4 rounded-xl backdrop-blur-md">
                 <div class="text-center">
-                  <div class="text-[10px] text-zinc-400 uppercase tracking-wider font-mono font-semibold">${isVi ? 'HIỆU QUẢ MẪU SỐ' : 'DENOMINATOR POWER'}</div>
-                  <div class="text-2xl font-bold text-emerald-400 font-mono">4x - 10x ROI</div>
+                  <div class="text-[9px] text-zinc-400 uppercase tracking-wider font-mono font-semibold">${isVi ? 'HIỆU QUẢ MẪU SỐ' : 'DENOMINATOR POWER'}</div>
+                  <div class="text-xl font-bold text-emerald-400 font-mono">4x - 10x ROI</div>
                 </div>
               </div>
             </div>
 
             <!-- VISUAL INTERACTIVE EQUATION (Clean non-wrapping layout) -->
-            <div class="relative z-10 p-5 sm:p-7 rounded-2xl bg-black/60 border border-white/10 backdrop-blur-xl space-y-5">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs font-mono font-semibold text-zinc-400 pb-3 border-b border-white/[0.08]">
+            <div class="relative z-10 p-4 sm:p-5 rounded-xl bg-black/60 border border-white/10 backdrop-blur-xl space-y-4">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[10.5px] font-mono font-semibold text-zinc-400 pb-2.5 border-b border-white/[0.08]">
                 <span>${isVi ? '[ MÔ PHỎNG PHƯƠNG TRÌNH TRỰC QUAN ]' : '[ INTERACTIVE MATHEMATICAL FORMULA ]'}</span>
                 <span class="text-sky-300 font-medium">${isVi ? 'Kéo thanh trượt bên dưới để đo lường độ nhạy' : 'Adjust sliders below for sensitivity analysis'}</span>
               </div>
 
               <!-- Fraction display -->
-              <div class="flex flex-col sm:flex-row items-center justify-center gap-4 py-3">
-                <div class="text-base sm:text-lg font-bold text-white tracking-tight shrink-0 font-mono">
+              <div class="flex flex-col sm:flex-row items-center justify-center gap-3 py-2">
+                <div class="text-sm sm:text-base font-bold text-white tracking-tight shrink-0 font-mono">
                   ${isVi ? 'Giá Trị Cảm Nhận' : 'Perceived Value'} <span class="text-zinc-500 font-normal">=</span>
                 </div>
 
                 <div class="flex flex-col items-center w-full max-w-md">
                   <!-- Numerator -->
-                  <div class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-white/[0.05] border border-white/15 text-xs sm:text-sm font-semibold shadow-inner text-center font-mono">
+                  <div class="w-full flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.05] border border-white/15 text-xs font-semibold shadow-inner text-center font-mono">
                     <span class="text-[#cfe2f8]">${isVi ? 'Lợi Ích Hứa Hẹn' : 'Benefit'} (<span id="dispImpact">90</span>)</span>
                     <span class="text-zinc-400 font-bold">−</span>
                     <span class="text-zinc-300">${isVi ? 'Chi Phí Tiếp Cận' : 'Cost'} (<span id="dispCost">20</span>)</span>
                     <span class="text-zinc-500 font-normal">=</span>
-                    <span class="text-emerald-300 font-bold px-2 py-0.5 rounded bg-emerald-500/15" id="dispNumerator">70</span>
+                    <span class="text-emerald-300 font-bold px-1.5 py-0.5 rounded bg-emerald-500/15" id="dispNumerator">70</span>
                   </div>
 
-                  <div class="w-full h-[1.5px] bg-gradient-to-r from-transparent via-white/30 to-transparent my-2"></div>
+                  <div class="w-full h-[1.5px] bg-gradient-to-r from-transparent via-white/30 to-transparent my-1.5"></div>
 
                   <!-- Denominator -->
-                  <div class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-rose-500/10 border border-rose-500/25 text-xs sm:text-sm font-bold text-rose-300 text-center font-mono shadow-sm">
-                    <span>${isVi ? 'MẪU SỐ (Rủi ro & Ma sát cảm nhận):' : 'DENOMINATOR (Perceived Risk & Friction):'}</span>
-                    <span class="text-white text-sm px-2.5 py-0.5 rounded bg-rose-500/30" id="dispRisk">8</span>
+                  <div class="w-full flex items-center justify-center gap-2 px-3 py-1.5 rounded-lg bg-rose-500/10 border border-rose-500/25 text-xs font-bold text-rose-300 text-center font-mono shadow-sm">
+                    <span>${isVi ? 'MẪU SỐ (Rủi ro & Ma sát):' : 'DENOMINATOR (Perceived Risk):'}</span>
+                    <span class="text-white text-xs px-2 py-0.5 rounded bg-rose-500/30" id="dispRisk">8</span>
                   </div>
                 </div>
               </div>
 
               <!-- 3 Sliders -->
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-1">
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
                 <!-- Slider 1 -->
-                <div class="p-4 rounded-xl bg-white/[0.03] border border-white/[0.06] space-y-2.5">
+                <div class="p-3 rounded-lg bg-white/[0.03] border border-white/[0.06] space-y-2">
                   <div class="flex justify-between items-center text-xs">
-                    <span class="text-zinc-200 font-semibold font-mono">${isVi ? '[TỬ SỐ] Lợi ích (Impact)' : '[NUMERATOR] Promise (Impact)'}</span>
-                    <span id="sliderImpactVal" class="text-white font-bold bg-sky-500/20 px-2 py-0.5 rounded text-[11px] font-mono">90</span>
+                    <span class="text-zinc-200 font-semibold font-mono text-[11px]">${isVi ? '[TỬ SỐ] Lợi ích' : '[NUMERATOR] Promise'}</span>
+                    <span id="sliderImpactVal" class="text-white font-bold bg-sky-500/20 px-1.5 py-0.5 rounded text-[10.5px] font-mono">90</span>
                   </div>
-                  <input type="range" id="sliderImpact" min="30" max="100" value="90" class="w-full accent-sky-400 cursor-pointer h-2 bg-zinc-800 rounded-lg" oninput="updateValueCalculator()"/>
-                  <div class="text-[11px] text-zinc-400 leading-tight">${isVi ? 'Nhu cầu cốt lõi & kết quả kỳ vọng' : 'Core need & promised outcomes'}</div>
+                  <input type="range" id="sliderImpact" min="30" max="100" value="90" class="w-full accent-sky-400 cursor-pointer h-1.5 bg-zinc-800 rounded-lg" oninput="updateValueCalculator()"/>
+                  <div class="text-[10.5px] text-zinc-400 leading-tight">${isVi ? 'Nhu cầu cốt lõi & kết quả kỳ vọng' : 'Core need & promised outcomes'}</div>
                 </div>
 
                 <!-- Slider 2 -->
-                <div class="p-4 rounded-xl bg-white/[0.03] border border-white/[0.06] space-y-2.5">
+                <div class="p-3 rounded-lg bg-white/[0.03] border border-white/[0.06] space-y-2">
                   <div class="flex justify-between items-center text-xs">
-                    <span class="text-zinc-200 font-semibold font-mono">${isVi ? '[CHI PHÍ] Giá & Công sức (Cost)' : '[FRICTION] Price & Effort (Cost)'}</span>
-                    <span id="sliderCostVal" class="text-white font-bold bg-zinc-700 px-2 py-0.5 rounded text-[11px] font-mono">20</span>
+                    <span class="text-zinc-200 font-semibold font-mono text-[11px]">${isVi ? '[CHI PHÍ] Giá & Công sức' : '[FRICTION] Price & Effort'}</span>
+                    <span id="sliderCostVal" class="text-white font-bold bg-zinc-700 px-1.5 py-0.5 rounded text-[10.5px] font-mono">20</span>
                   </div>
-                  <input type="range" id="sliderCost" min="5" max="50" value="20" class="w-full accent-zinc-400 cursor-pointer h-2 bg-zinc-800 rounded-lg" oninput="updateValueCalculator()"/>
-                  <div class="text-[11px] text-zinc-400 leading-tight">${isVi ? 'Tiền bạc, thời gian & rào cản thao tác' : 'Monetary expense & setup friction'}</div>
+                  <input type="range" id="sliderCost" min="5" max="50" value="20" class="w-full accent-zinc-400 cursor-pointer h-1.5 bg-zinc-800 rounded-lg" oninput="updateValueCalculator()"/>
+                  <div class="text-[10.5px] text-zinc-400 leading-tight">${isVi ? 'Tiền bạc, thời gian & rào cản thao tác' : 'Monetary expense & setup friction'}</div>
                 </div>
 
                 <!-- Slider 3 -->
-                <div class="p-4 rounded-xl bg-rose-500/[0.06] border border-rose-500/20 space-y-2.5">
+                <div class="p-3 rounded-lg bg-rose-500/[0.06] border border-rose-500/20 space-y-2">
                   <div class="flex justify-between items-center text-xs">
-                    <span class="text-rose-300 font-bold font-mono">${isVi ? '[MẪU SỐ] Rủi ro (Risk)' : '[DENOMINATOR] Perceived Risk'}</span>
-                    <span id="sliderRiskVal" class="text-white font-bold bg-rose-500/60 px-2 py-0.5 rounded text-[11px] font-mono">8</span>
+                    <span class="text-rose-300 font-bold font-mono text-[11px]">${isVi ? '[MẪU SỐ] Rủi ro' : '[DENOMINATOR] Risk'}</span>
+                    <span id="sliderRiskVal" class="text-white font-bold bg-rose-500/60 px-1.5 py-0.5 rounded text-[10.5px] font-mono">8</span>
                   </div>
-                  <input type="range" id="sliderRisk" min="1" max="20" value="8" class="w-full accent-rose-500 cursor-pointer h-2 bg-zinc-800 rounded-lg" oninput="updateValueCalculator()"/>
-                  <div class="text-[11px] text-rose-300 font-medium leading-tight">${isVi ? 'Kéo về 2 để kích hoạt đòn bẩy 4x-10x' : 'Slide to 2 to unlock 4x-10x leverage'}</div>
+                  <input type="range" id="sliderRisk" min="1" max="20" value="8" class="w-full accent-rose-500 cursor-pointer h-1.5 bg-zinc-800 rounded-lg" oninput="updateValueCalculator()"/>
+                  <div class="text-[10.5px] text-rose-300 font-medium leading-tight">${isVi ? 'Kéo về 2 để kích hoạt đòn bẩy 4x-10x' : 'Slide to 2 to unlock 4x-10x leverage'}</div>
                 </div>
               </div>
 
               <!-- Output Box -->
-              <div class="p-4 sm:p-5 rounded-xl bg-gradient-to-r from-[#12151e] to-[#0d0f15] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 mt-2">
-                <div class="flex items-center gap-4">
+              <div class="p-3.5 rounded-xl bg-gradient-to-r from-[#12151e] to-[#0d0f15] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 mt-1">
+                <div class="flex items-center gap-3.5">
                   <div class="text-center sm:text-left">
-                    <div class="text-[10px] text-zinc-400 uppercase tracking-wider font-mono font-semibold">${isVi ? 'CHỈ SỐ GIÁ TRỊ CẢM NHẬN' : 'NET VALUE MULTIPLIER'}</div>
-                    <div id="livePerceivedValue" class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-mono">
+                    <div class="text-[9.5px] text-zinc-400 uppercase tracking-wider font-mono font-semibold">${isVi ? 'CHỈ SỐ GIÁ TRỊ CẢM NHẬN' : 'NET VALUE MULTIPLIER'}</div>
+                    <div id="livePerceivedValue" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-mono">
                       8.8×
                     </div>
                   </div>
-                  <span id="liveValueSurge" class="text-[11px] font-mono font-bold px-3 py-1 rounded-full bg-zinc-800 text-zinc-300 border border-white/10">
+                  <span id="liveValueSurge" class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-zinc-800 text-zinc-300 border border-white/10">
                     ${isVi ? '[ CHUẨN CƠ SỞ ]' : '[ BASELINE STANDARD ]'}
                   </span>
                 </div>
-                <div id="calcInsightBox" class="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08] text-xs text-zinc-300 leading-relaxed max-w-md">
+                <div id="calcInsightBox" class="p-3 rounded-lg bg-white/[0.03] border border-white/[0.08] text-[11px] text-zinc-300 leading-relaxed max-w-md">
                   ${isVi 
                     ? '<strong class="text-white font-mono">[VÙNG KHÁNG CỰ CAO (Risk: 8)]</strong> Nỗi sợ tổn thất (Loss Aversion) chiếm ưu thế. Kéo giảm thanh Rủi ro xuống 2 để chứng kiến đòn bẩy vọt lên <strong>35.0×</strong>.' 
                     : '<strong class="text-white font-mono">[HIGH RESISTANCE ZONE (Risk: 8)]</strong> Loss aversion dominates purchase intent. Slide risk down to 2 to witness perceived value surge to <strong>35.0×</strong>.'}
@@ -4255,117 +4320,117 @@ Kết quả: Chiến dịch tạo ra hơn 1.1 tỷ lượt hiển thị tự nhi
           </div>
 
           <!-- The 3 Strategic Problem-Solving Pillars (McKinsey Value Driver Trees) -->
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-3.5">
             
             <!-- Pillar 1: Offer Value Tree -->
-            <div class="p-5 sm:p-6 rounded-2xl bg-[#111319] border border-white/[0.08] flex flex-col justify-between space-y-4 shadow-lg">
-              <div class="space-y-3.5">
-                <div class="flex items-center justify-between">
-                  <span class="text-[10px] font-bold font-mono uppercase tracking-wider px-2.5 py-1 rounded-full bg-sky-500/10 text-sky-300 border border-sky-500/20">
-                    ${isVi ? '[ KHUNG 1 · CÔNG THỨC OFFER ]' : '[ FRAMEWORK 1 · OFFER VALUE ]'}
+            <div class="p-4 sm:p-4.5 rounded-xl bg-[#111319] border border-white/[0.08] flex flex-col justify-between space-y-3 shadow-md hover:border-sky-500/30 transition">
+              <div class="space-y-2.5">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-[9.5px] font-bold font-mono uppercase tracking-wider px-2 py-0.5 rounded-md bg-sky-500/10 text-sky-300 border border-sky-500/20 whitespace-nowrap">
+                    ${isVi ? 'KHUNG 1 · CÔNG THỨC OFFER' : 'FRAMEWORK 1 · OFFER VALUE'}
                   </span>
-                  <span class="text-[11px] text-zinc-400 font-mono">Hormozi / Stanford</span>
+                  <span class="text-[10px] text-zinc-400 font-mono whitespace-nowrap shrink-0">Hormozi / Stanford</span>
                 </div>
-                <h4 class="text-base font-bold text-white tracking-tight">
+                <h4 class="text-[13px] sm:text-sm font-bold text-white tracking-tight leading-snug">
                   ${isVi ? 'Phương Trình Lời Đề Nghị Chuyển Đổi Cao' : 'High-Converting Offer Formula'}
                 </h4>
 
-                <!-- Formula Chip (Clean Non-wrapping with overflow-x-auto) -->
-                <div class="p-3 rounded-xl bg-black/50 border border-white/[0.08] text-xs text-[#cfe2f8] font-mono overflow-x-auto whitespace-nowrap">
-                  Offer = (Dream Outcome × Likelihood) / (Time × Effort &amp; Risk)
+                <!-- Formula Chip -->
+                <div class="p-2 rounded-lg bg-black/50 border border-white/[0.08] text-[11px] text-[#cfe2f8] font-mono overflow-x-auto whitespace-nowrap">
+                  Offer = (Dream Outcome × Likelihood) ÷ (Time × Risk)
                 </div>
 
-                <!-- Bulletproof Levers -->
-                <div class="space-y-2 text-xs text-zinc-300 leading-relaxed">
-                  <div class="flex items-start gap-2">
-                    <span class="text-white font-mono font-bold shrink-0">${isVi ? '[TỬ SỐ]:' : '[NUMERATOR]:'}</span>
-                    <span>${isVi ? 'Cụ thể hóa khát vọng tột đỉnh (Dream Outcome) + Bằng chứng bảo chứng (Social Proof).' : 'Specify dream outcome + validate with indisputable social proof.'}</span>
+                <!-- Bulletproof Levers (Flowing inline text: NO column squeeze, NO multi-line word wrapping) -->
+                <div class="space-y-2 text-[11px] text-zinc-300 leading-relaxed font-sans">
+                  <div>
+                    <span class="text-white font-mono font-bold mr-1.5">${isVi ? '[TỬ SỐ]' : '[NUMERATOR]'}</span>
+                    <span>${isVi ? 'Cụ thể hóa khát vọng tột đỉnh (Dream Outcome) + bằng chứng bảo chứng (Social Proof).' : 'Specify dream outcome + validate with indisputable social proof.'}</span>
                   </div>
-                  <div class="flex items-start gap-2">
-                    <span class="text-rose-300 font-mono font-bold shrink-0">${isVi ? '[MẪU SỐ]:' : '[DENOMINATOR]:'}</span>
-                    <span>${isVi ? 'Rút ngắn thời gian thấy kết quả (Time-to-Value) + Đảo ngược 100% rủi ro (Bảo hành hoàn tiền).' : 'Compress time-to-value + invert 100% risk with unconditional money-back.'}</span>
+                  <div>
+                    <span class="text-rose-300 font-mono font-bold mr-1.5">${isVi ? '[MẪU SỐ]' : '[DENOMINATOR]'}</span>
+                    <span>${isVi ? 'Rút ngắn thời gian thấy kết quả (Time-to-Value) + đảo ngược 100% rủi ro với bảo hành hoàn tiền.' : 'Compress time-to-value + invert 100% risk with unconditional money-back.'}</span>
                   </div>
                 </div>
               </div>
 
-              <div class="pt-3 border-t border-white/[0.06] text-xs text-zinc-400 flex items-center justify-between font-mono">
+              <div class="pt-2 border-t border-white/[0.06] text-[10.5px] text-zinc-400 flex items-center justify-between font-mono">
                 <span>${isVi ? '[THỰC CHIẾN]:' : '[BENCHMARK]:'}</span>
                 <span class="text-sky-300 font-semibold">Domino's 30-min Guarantee</span>
               </div>
             </div>
 
             <!-- Pillar 2: Attention Logic Tree -->
-            <div class="p-5 sm:p-6 rounded-2xl bg-[#111319] border border-white/[0.08] flex flex-col justify-between space-y-4 shadow-lg">
-              <div class="space-y-3.5">
-                <div class="flex items-center justify-between">
-                  <span class="text-[10px] font-bold font-mono uppercase tracking-wider px-2.5 py-1 rounded-full bg-sky-500/10 text-sky-300 border border-sky-500/20">
-                    ${isVi ? '[ KHUNG 2 · BỘ LỌC CHÚ Ý ]' : '[ FRAMEWORK 2 · ATTENTION FILTER ]'}
+            <div class="p-4 sm:p-4.5 rounded-xl bg-[#111319] border border-white/[0.08] flex flex-col justify-between space-y-3 shadow-md hover:border-sky-500/30 transition">
+              <div class="space-y-2.5">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-[9.5px] font-bold font-mono uppercase tracking-wider px-2 py-0.5 rounded-md bg-sky-500/10 text-sky-300 border border-sky-500/20 whitespace-nowrap">
+                    ${isVi ? 'KHUNG 2 · BỘ LỌC CHÚ Ý' : 'FRAMEWORK 2 · ATTENTION FILTER'}
                   </span>
-                  <span class="text-[11px] text-zinc-400 font-mono">Kahneman / RAS 3s</span>
+                  <span class="text-[10px] text-zinc-400 font-mono whitespace-nowrap shrink-0">Kahneman / RAS 3s</span>
                 </div>
-                <h4 class="text-base font-bold text-white tracking-tight">
+                <h4 class="text-[13px] sm:text-sm font-bold text-white tracking-tight leading-snug">
                   ${isVi ? 'Phương Trình Kích Hoạt Sự Chú Ý' : 'Attention Stimulus Formula'}
                 </h4>
 
                 <!-- Formula Chip -->
-                <div class="p-3 rounded-xl bg-black/50 border border-white/[0.08] text-xs text-[#cfe2f8] font-mono overflow-x-auto whitespace-nowrap">
-                  Attention = Relevance × Visual Fluency × Pattern Interrupt
+                <div class="p-2 rounded-lg bg-black/50 border border-white/[0.08] text-[11px] text-[#cfe2f8] font-mono overflow-x-auto whitespace-nowrap">
+                  Attention = Relevance × Visual Fluency × Interrupt
                 </div>
 
                 <!-- Bulletproof Levers -->
-                <div class="space-y-2 text-xs text-zinc-300 leading-relaxed">
-                  <div class="flex items-start gap-2">
-                    <span class="text-white font-mono font-bold shrink-0">${isVi ? '[NGUYÊN LÝ]:' : '[MECHANISM]:'}</span>
-                    <span>${isVi ? 'Phép nhân liên kết (×): Nếu bất kỳ yếu tố nào bằng 0, sự chú ý lập tức sụp đổ về 0.' : 'Multiplicative model (×): If any single variable drops to zero, attention collapses.'}</span>
+                <div class="space-y-2 text-[11px] text-zinc-300 leading-relaxed font-sans">
+                  <div>
+                    <span class="text-white font-mono font-bold mr-1.5">${isVi ? '[NGUYÊN LÝ]' : '[MECHANISM]'}</span>
+                    <span>${isVi ? 'Phép nhân liên kết (×): Nếu bất kỳ biến số nào bằng 0, sự chú ý lập tức sụp đổ về 0.' : 'Multiplicative model (×): If any variable drops to zero, attention collapses.'}</span>
                   </div>
-                  <div class="flex items-start gap-2">
-                    <span class="text-sky-300 font-mono font-bold shrink-0">${isVi ? '[CẦN GẠT]:' : '[ACTION LEVER]:'}</span>
-                    <span>${isVi ? 'Đánh trúng nỗi đau trong 1.5s đầu + Bố cục tối giản + Phá vỡ kịch bản quen thuộc.' : 'Hook core pain point in first 1.5s + minimalist typography + pattern disruption.'}</span>
+                  <div>
+                    <span class="text-sky-300 font-mono font-bold mr-1.5">${isVi ? '[CẦN GẠT]' : '[ACTION LEVER]'}</span>
+                    <span>${isVi ? 'Đánh trúng nỗi đau trong 1.5s đầu + bố cục tối giản + phá vỡ kịch bản quen thuộc.' : 'Hook core pain point in first 1.5s + minimalist typography + pattern disruption.'}</span>
                   </div>
                 </div>
               </div>
 
-              <div class="pt-3 border-t border-white/[0.06] text-xs text-zinc-400 flex items-center justify-between font-mono">
+              <div class="pt-2 border-t border-white/[0.06] text-[10.5px] text-zinc-400 flex items-center justify-between font-mono">
                 <span>${isVi ? '[THỰC CHIẾN]:' : '[BENCHMARK]:'}</span>
                 <span class="text-sky-300 font-semibold">Dollar Shave Club 3s Hook</span>
               </div>
             </div>
 
             <!-- Pillar 3: Funnel Diagnostic Pipeline -->
-            <div class="p-5 sm:p-6 rounded-2xl bg-[#111319] border border-white/[0.08] flex flex-col justify-between space-y-4 shadow-lg">
-              <div class="space-y-3.5">
-                <div class="flex items-center justify-between">
-                  <span class="text-[10px] font-bold font-mono uppercase tracking-wider px-2.5 py-1 rounded-full bg-sky-500/10 text-sky-300 border border-sky-500/20">
-                    ${isVi ? '[ KHUNG 3 · CHẨN ĐOÁN PHỄU ]' : '[ FRAMEWORK 3 · FUNNEL PIPELINE ]'}
+            <div class="p-4 sm:p-4.5 rounded-xl bg-[#111319] border border-white/[0.08] flex flex-col justify-between space-y-3 shadow-md hover:border-sky-500/30 transition">
+              <div class="space-y-2.5">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-[9.5px] font-bold font-mono uppercase tracking-wider px-2 py-0.5 rounded-md bg-sky-500/10 text-sky-300 border border-sky-500/20 whitespace-nowrap">
+                    ${isVi ? 'KHUNG 3 · CHẨN ĐOÁN PHỄU' : 'FRAMEWORK 3 · FUNNEL PIPELINE'}
                   </span>
-                  <span class="text-[11px] text-zinc-400 font-mono">McKinsey 4-Step</span>
+                  <span class="text-[10px] text-zinc-400 font-mono whitespace-nowrap shrink-0">McKinsey 4-Step</span>
                 </div>
-                <h4 class="text-base font-bold text-white tracking-tight">
+                <h4 class="text-[13px] sm:text-sm font-bold text-white tracking-tight leading-snug">
                   ${isVi ? 'Quy Trình Chẩn Đoán Rào Cản Hành Vi' : 'Behavioral Funnel Diagnostic'}
                 </h4>
 
                 <!-- 4 Steps Clean Monochrome / Accent -->
-                <div class="grid grid-cols-4 gap-1 p-2 rounded-xl bg-black/50 border border-white/[0.08] text-center text-[10px] font-mono font-bold">
-                  <div class="p-1.5 rounded bg-white/[0.04] text-zinc-300">1. Issue</div>
-                  <div class="p-1.5 rounded bg-white/[0.08] text-zinc-200">2. Barrier</div>
-                  <div class="p-1.5 rounded bg-sky-500/20 text-sky-200 border border-sky-500/30">3. Nudge</div>
-                  <div class="p-1.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">4. Lift</div>
+                <div class="grid grid-cols-4 gap-1 p-1 rounded-lg bg-black/50 border border-white/[0.08] text-center text-[9.5px] font-mono font-bold">
+                  <div class="p-1 rounded bg-white/[0.04] text-zinc-300">1. Issue</div>
+                  <div class="p-1 rounded bg-white/[0.08] text-zinc-200">2. Barrier</div>
+                  <div class="p-1 rounded bg-sky-500/20 text-sky-200 border border-sky-500/30">3. Nudge</div>
+                  <div class="p-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">4. Lift</div>
                 </div>
 
                 <!-- Description -->
-                <div class="space-y-2 text-xs text-zinc-300 leading-relaxed">
-                  <div class="flex items-start gap-2">
-                    <span class="text-white font-mono font-bold shrink-0">${isVi ? '[CHẨN ĐOÁN]:' : '[DIAGNOSIS]:'}</span>
-                    <span>${isVi ? 'Xác định chính xác rào cản tâm lý khiến khách rớt phễu (sợ hớ, sợ phiền, sợ lộ thẻ).' : 'Pinpoint the exact psychological friction causing drop-off (price, effort, trust).'}</span>
+                <div class="space-y-2 text-[11px] text-zinc-300 leading-relaxed font-sans">
+                  <div>
+                    <span class="text-white font-mono font-bold mr-1.5">${isVi ? '[CHẨN ĐOÁN]' : '[DIAGNOSIS]'}</span>
+                    <span>${isVi ? 'Xác định chính xác rào cản tâm lý khiến khách rớt phễu (giá, công sức, niềm tin).' : 'Pinpoint exact psychological friction causing drop-off (price, effort, trust).'}</span>
                   </div>
-                  <div class="flex items-start gap-2">
-                    <span class="text-emerald-300 font-mono font-bold shrink-0">${isVi ? '[CAN THIỆP]:' : '[INTERVENTION]:'}</span>
-                    <span>${isVi ? 'Kích hoạt đúng hiệu ứng hành vi tương ứng để chuyển hóa rào cản thành động lực mua.' : 'Activate the matching cognitive heuristic to turn resistance into buying momentum.'}</span>
+                  <div>
+                    <span class="text-emerald-300 font-mono font-bold mr-1.5">${isVi ? '[CAN THIỆP]' : '[INTERVENTION]'}</span>
+                    <span>${isVi ? 'Kích hoạt đúng hiệu ứng hành vi tương ứng để chuyển hóa rào cản thành động lực mua.' : 'Activate matching cognitive heuristic to turn resistance into buying momentum.'}</span>
                   </div>
                 </div>
               </div>
 
-              <div class="pt-3 border-t border-white/[0.06] text-xs text-zinc-400 flex items-center justify-between font-mono">
+              <div class="pt-2 border-t border-white/[0.06] text-[10.5px] text-zinc-400 flex items-center justify-between font-mono">
                 <span>${isVi ? '[MỤC TIÊU]:' : '[TARGET KPI]:'}</span>
                 <span class="text-emerald-300 font-semibold">+20% - 45% CVR Lift</span>
               </div>
@@ -4374,56 +4439,56 @@ Kết quả: Chiến dịch tạo ra hơn 1.1 tỷ lượt hiển thị tự nhi
           </div>
 
           <!-- Bottom Dynamic Math Model & Risk Engine (With Bulletproof Variable Decomposition) -->
-          <div class="p-6 sm:p-7 rounded-2xl bg-[#0f1117] border border-white/[0.1] shadow-xl space-y-5">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-white/[0.06]">
-              <div class="flex items-center gap-2.5">
-                <span class="w-2 h-2 rounded-full bg-sky-400"></span>
-                <span class="text-xs font-mono font-bold uppercase tracking-wider text-white">
+          <div class="p-4 sm:p-5 rounded-2xl bg-[#0f1117] border border-white/[0.1] shadow-xl space-y-3.5 font-['Manrope']">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2.5 border-b border-white/[0.06]">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-sky-400 shrink-0"></span>
+                <span class="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider text-white">
                   ${isVi ? 'MÔ HÌNH TOÁN HỌC & MA TRẬN RỦI RO: ' : 'MATHEMATICAL MODEL & RISK RADAR: '}
                   <strong class="text-sky-300">${titleMain}</strong>
                 </span>
               </div>
-              <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.1] text-zinc-300 font-mono">
+              <span class="text-[10px] sm:text-[10.5px] font-semibold px-2.5 py-0.5 rounded-full bg-white/[0.05] border border-white/[0.1] text-zinc-300 font-mono self-start sm:self-auto">
                 ${effect.foundation}
               </span>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-3.5 items-stretch">
               
               <!-- Left: Behavioral Equation & Bulletproof Decomposition -->
-              <div class="lg:col-span-7 flex flex-col justify-between p-5 sm:p-6 rounded-2xl bg-black/50 border border-white/10 space-y-4 shadow-inner">
-                <div class="space-y-3.5">
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs font-mono font-bold text-sky-300 uppercase tracking-wider">${isVi ? '[ PHƯƠNG TRÌNH KINH TẾ HỌC HÀNH VI ]' : '[ BEHAVIORAL ECONOMIC FORMULA ]'}</span>
-                    <span class="text-[10px] px-2.5 py-0.5 rounded-full bg-white/[0.05] text-zinc-300 border border-white/10 font-semibold font-mono">MCKINSEY VALUE DRIVER</span>
+              <div class="lg:col-span-7 flex flex-col justify-between p-3.5 sm:p-4 rounded-xl bg-black/50 border border-white/10 space-y-2.5 shadow-inner">
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between gap-2">
+                    <span class="text-[10.5px] font-mono font-bold text-sky-300 uppercase tracking-wider">${isVi ? '[ PHƯƠNG TRÌNH HÀNH VI ]' : '[ BEHAVIORAL ECONOMIC FORMULA ]'}</span>
+                    <span class="text-[9px] px-2 py-0.5 rounded-full bg-white/[0.05] text-zinc-300 border border-white/10 font-semibold font-mono">MCKINSEY VALUE DRIVER</span>
                   </div>
                   
-                  <div class="text-sm sm:text-base font-bold text-white py-3 px-4 leading-relaxed font-mono bg-white/[0.03] rounded-xl border border-white/[0.06] overflow-x-auto whitespace-nowrap">
+                  <div class="text-xs sm:text-[12.5px] font-medium text-white py-2 px-3 leading-relaxed font-mono bg-white/[0.03] rounded-lg border border-white/[0.06] overflow-x-auto whitespace-nowrap">
                     ${effectFormula.formulaHtml}
                   </div>
 
-                  <p class="text-xs sm:text-[13px] text-zinc-300 leading-relaxed font-normal">
+                  <p class="text-[11px] sm:text-[11.5px] text-zinc-300 leading-relaxed font-normal">
                     ${effectFormula.desc}
                   </p>
 
-                  <!-- Bulletproof Decomposition -->
+                  <!-- Bulletproof Decomposition (Side-by-side 2 columns on desktop to preserve vertical space) -->
                   ${effectFormula.bulletproofDecomposition ? `
-                    <div class="pt-3 border-t border-white/[0.08] space-y-2.5">
-                      <div class="text-[11px] font-bold uppercase tracking-wider text-sky-300 font-mono">
+                    <div class="pt-2 border-t border-white/[0.08] space-y-1.5">
+                      <div class="text-[9.5px] font-bold uppercase tracking-wider text-sky-300 font-mono">
                         ${isVi ? '[ PHÂN RÃ BIẾN SỐ & CẦN GẠT HÀNH ĐỘNG ]' : '[ VARIABLE ANATOMY & ACTIONABLE LEVERS ]'}
                       </div>
-                      <div class="space-y-2.5">
+                      <div class="grid grid-cols-1 ${effectFormula.bulletproofDecomposition.length > 1 ? 'sm:grid-cols-2' : ''} gap-2">
                         ${effectFormula.bulletproofDecomposition.map(d => `
-                          <div class="p-3 rounded-xl bg-white/[0.02] border border-white/[0.05] text-xs space-y-1.5">
-                            <div class="text-white font-semibold flex items-center gap-1.5 font-mono">
-                              <span class="text-sky-400">▸</span>
+                          <div class="p-2 rounded-lg bg-white/[0.02] border border-white/[0.05] text-[10.5px] space-y-1">
+                            <div class="text-white font-semibold flex items-center gap-1 font-mono text-[10.5px]">
+                              <span class="text-sky-400 text-xs">▸</span>
                               <span>${d.varName}</span>
                             </div>
-                            <div class="text-zinc-400 pl-3 leading-relaxed">
-                              <strong class="text-zinc-300 font-mono">${isVi ? '[Ý NGHĨA]:' : '[MEANING]:'}</strong> ${d.meaning}
+                            <div class="text-zinc-400 leading-snug font-sans">
+                              <span class="text-zinc-300 font-mono font-medium">${isVi ? '[Ý nghĩa]:' : '[Meaning]:'}</span> ${d.meaning}
                             </div>
-                            <div class="text-emerald-300 pl-3 leading-relaxed">
-                              <strong class="font-mono text-emerald-400">${isVi ? '[CẦN GẠT]:' : '[ACTION LEVER]:'}</strong> ${d.lever}
+                            <div class="text-emerald-300 leading-snug font-sans">
+                              <span class="font-mono font-medium text-emerald-400">${isVi ? '[Cần gạt]:' : '[Action lever]:'}</span> ${d.lever}
                             </div>
                           </div>
                         `).join('')}
@@ -4433,67 +4498,69 @@ Kết quả: Chiến dịch tạo ra hơn 1.1 tỷ lượt hiển thị tự nhi
 
                   <!-- Distinct Comparison Box (Decoy vs Compromise) -->
                   ${effectFormula.comparisonNote ? `
-                    <div class="p-4 rounded-xl bg-white/[0.03] border border-sky-400/25 text-xs text-zinc-200 leading-relaxed mt-2 font-['Manrope']">
+                    <div class="p-2.5 rounded-lg bg-white/[0.03] border border-sky-400/25 text-[10.5px] text-zinc-200 leading-relaxed mt-1 font-['Manrope']">
                       ${effectFormula.comparisonNote}
                     </div>
                   ` : ''}
                 </div>
 
-                <div class="pt-3.5 border-t border-white/[0.08] text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
-                  <span class="text-zinc-400 font-mono">${isVi ? '[HƯỚNG DẪN THỰC THI]:' : '[PLAYBOOK]:'}</span>
+                <div class="pt-2 border-t border-white/[0.08] text-[10.5px] flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+                  <span class="text-zinc-400 font-mono shrink-0">${isVi ? '[HƯỚNG DẪN THỰC THI]:' : '[PLAYBOOK]:'}</span>
                   <span class="text-emerald-300 font-medium">${effectFormula.actionablePlaybook || (isVi ? 'Tối ưu hóa chuyển đổi' : 'Conversion uplift')}</span>
                 </div>
               </div>
 
               <!-- Right: Risk & Sensitivity Scorecard -->
-              <div class="lg:col-span-5 p-5 sm:p-6 rounded-2xl bg-black/40 border border-white/[0.08] flex flex-col justify-between space-y-5 shadow-inner">
-                <div class="text-xs font-mono font-bold text-zinc-300 uppercase tracking-wider flex items-center justify-between pb-3 border-b border-white/[0.06]">
+              <div class="lg:col-span-5 p-3.5 sm:p-4 rounded-xl bg-black/40 border border-white/[0.08] flex flex-col justify-between space-y-3 shadow-inner">
+                <div class="text-[10px] font-mono font-bold text-zinc-300 uppercase tracking-wider flex items-center justify-between pb-2 border-b border-white/[0.06]">
                   <span>${isVi ? '[ MA TRẬN ĐỊNH LƯỢNG RỦI RO ]' : '[ RISK SENSITIVITY RADAR ]'}</span>
-                  <span class="px-3 py-1 rounded-full bg-white/[0.05] border border-white/15 text-white font-bold text-xs font-mono">
+                  <span class="px-2 py-0.5 rounded-full bg-white/[0.05] border border-white/15 text-white font-bold text-[9.5px] font-mono">
                     ${isVi ? 'Điểm rủi ro:' : 'Risk Score:'} ${effectFormula.riskScore}/100
                   </span>
                 </div>
 
-                <!-- Metric 1: Consumer Friction -->
-                <div class="space-y-2 text-xs">
-                  <div class="flex items-center justify-between gap-2">
-                    <span class="text-zinc-300 font-medium">${isVi ? 'Rào cản nhận thức (Friction):' : 'Cognitive Friction:'}</span>
-                    <span class="text-white font-bold text-[11px] px-2.5 py-0.5 rounded-md bg-white/[0.08] border border-white/10 shrink-0 font-mono">
-                      ${effectFormula.frictionLevel}
-                    </span>
+                <div class="space-y-2.5">
+                  <!-- Metric 1: Consumer Friction -->
+                  <div class="space-y-1 text-[10.5px]">
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="text-zinc-300 font-medium">${isVi ? 'Rào cản nhận thức (Friction):' : 'Cognitive Friction:'}</span>
+                      <span class="text-white font-bold text-[9.5px] px-1.5 py-0.5 rounded bg-white/[0.08] border border-white/10 shrink-0 font-mono">
+                        ${effectFormula.frictionLevel}
+                      </span>
+                    </div>
+                    <div class="w-full h-1.5 rounded-full bg-white/10 overflow-hidden">
+                      <div class="h-full ${effectFormula.frictionBarColor} rounded-full transition-all duration-500" style="width: ${effectFormula.frictionPercent}%"></div>
+                    </div>
                   </div>
-                  <div class="w-full h-1.5 rounded-full bg-white/10 overflow-hidden">
-                    <div class="h-full ${effectFormula.frictionBarColor} rounded-full transition-all duration-500" style="width: ${effectFormula.frictionPercent}%"></div>
+
+                  <!-- Metric 2: Backfire / Reactance Risk -->
+                  <div class="space-y-1 text-[10.5px]">
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="text-zinc-300 font-medium">${isVi ? 'Rủi ro phản ứng ngược (Reactance):' : 'Backfire Reactance:'}</span>
+                      <span class="text-white font-bold text-[9.5px] px-1.5 py-0.5 rounded bg-white/[0.08] border border-white/10 shrink-0 font-mono">
+                        ${effectFormula.backfireLevel}
+                      </span>
+                    </div>
+                    <div class="w-full h-1.5 rounded-full bg-white/10 overflow-hidden">
+                      <div class="h-full ${effectFormula.backfireBarColor} rounded-full transition-all duration-500" style="width: ${effectFormula.backfirePercent}%"></div>
+                    </div>
+                  </div>
+
+                  <!-- Metric 3: White-hat / Ethical Index -->
+                  <div class="space-y-1 text-[10.5px]">
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="text-zinc-300 font-medium">${isVi ? 'Chỉ số minh bạch đạo đức:' : 'Ethical / White-Hat Index:'}</span>
+                      <span class="text-emerald-300 font-bold text-[9.5px] px-1.5 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 shrink-0 font-mono">
+                        ${effectFormula.whiteHatLevel}
+                      </span>
+                    </div>
+                    <div class="w-full h-1.5 rounded-full bg-white/10 overflow-hidden">
+                      <div class="h-full ${effectFormula.whiteHatBarColor} rounded-full transition-all duration-500" style="width: ${effectFormula.whiteHatPercent}%"></div>
+                    </div>
                   </div>
                 </div>
 
-                <!-- Metric 2: Backfire / Reactance Risk -->
-                <div class="space-y-2 text-xs">
-                  <div class="flex items-center justify-between gap-2">
-                    <span class="text-zinc-300 font-medium">${isVi ? 'Rủi ro phản ứng ngược (Reactance):' : 'Backfire Reactance:'}</span>
-                    <span class="text-white font-bold text-[11px] px-2.5 py-0.5 rounded-md bg-white/[0.08] border border-white/10 shrink-0 font-mono">
-                      ${effectFormula.backfireLevel}
-                    </span>
-                  </div>
-                  <div class="w-full h-1.5 rounded-full bg-white/10 overflow-hidden">
-                    <div class="h-full ${effectFormula.backfireBarColor} rounded-full transition-all duration-500" style="width: ${effectFormula.backfirePercent}%"></div>
-                  </div>
-                </div>
-
-                <!-- Metric 3: White-hat / Ethical Index -->
-                <div class="space-y-2 text-xs">
-                  <div class="flex items-center justify-between gap-2">
-                    <span class="text-zinc-300 font-medium">${isVi ? 'Chỉ số minh bạch đạo đức:' : 'Ethical / White-Hat Index:'}</span>
-                    <span class="text-emerald-300 font-bold text-[11px] px-2.5 py-0.5 rounded-md bg-emerald-500/10 border border-emerald-500/20 shrink-0 font-mono">
-                      ${effectFormula.whiteHatLevel}
-                    </span>
-                  </div>
-                  <div class="w-full h-1.5 rounded-full bg-white/10 overflow-hidden">
-                    <div class="h-full ${effectFormula.whiteHatBarColor} rounded-full transition-all duration-500" style="width: ${effectFormula.whiteHatPercent}%"></div>
-                  </div>
-                </div>
-
-                <div class="pt-3 text-[11px] text-zinc-400 border-t border-white/[0.06] leading-relaxed">
+                <div class="pt-2 text-[9.5px] text-zinc-400 border-t border-white/[0.06] leading-relaxed">
                   ${isVi 
                     ? 'Thước đo đạo đức phản ánh mức độ tôn trọng quyền tự chủ của người dùng, ngăn ngừa bẫy hành vi cưỡng bức (Dark Patterns).'
                     : 'Ethical index reflects respect for consumer autonomy and safeguards against manipulative dark patterns.'}
@@ -4862,8 +4929,9 @@ Kết quả: Chiến dịch tạo ra hơn 1.1 tỷ lượt hiển thị tự nhi
       const extLink = document.getElementById('modalExternalLink');
       if (extLink) {
         extLink.href = effect.primaryCaseUrl || '#';
-        const caseLabel = isVi ? (effect.primaryCaseSourceLabelVi || effect.primaryCaseSourceLabel) : effect.primaryCaseSourceLabel;
-        extLink.innerHTML = `<span>${isVi ? `Đọc case gốc tại ${caseLabel || 'nguồn quốc tế'}` : `Read Case at ${caseLabel || 'International Source'}`}</span> <span class="text-[11px]">↗</span>`;
+        const rawLabel = isVi ? (effect.primaryCaseSourceLabelVi || effect.primaryCaseSourceLabel) : effect.primaryCaseSourceLabel;
+        const caseLabel = rawLabel ? rawLabel.split('(')[0].trim() : (isVi ? 'nguồn quốc tế' : 'International Source');
+        extLink.innerHTML = `<span>${isVi ? `Đọc case gốc (${caseLabel})` : `Read Case (${caseLabel})`}</span> <span class="text-[11px]">↗</span>`;
       }
 
       const acadLink = document.getElementById('modalAcademicLink');
