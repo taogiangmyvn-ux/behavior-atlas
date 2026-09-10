@@ -797,17 +797,25 @@
       <div class="relative w-full h-[540px] sm:h-[620px] bg-[#101012]">
         <canvas id="brainCanvas" class="w-full h-full block cursor-grab active:cursor-grabbing" style="width: 100%; height: 100%; display: block;"></canvas>
 
-        <!-- Tooltip -->
-        <div id="canvasTooltip" class="absolute pointer-events-none hidden z-30 px-4 py-3 rounded-xl bg-[#161618]/95 border border-white/20 text-xs shadow-2xl backdrop-blur-md transition-all duration-75">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="text-[10px] font-mono text-[#cfe2f8] uppercase tracking-wider" id="tipCluster">Consideration</span>
-            <span class="text-[10px] text-zinc-400 font-mono" id="tipBrand">• KFC</span>
+        <!-- Tooltip with Dimension Gradient & Specular Glass Aura -->
+        <div id="canvasTooltip" class="absolute pointer-events-none hidden z-30 px-5 py-4 rounded-2xl text-xs shadow-2xl backdrop-blur-2xl transition-all duration-75 max-w-sm border border-white/20 overflow-hidden" style="background: linear-gradient(135deg, rgba(22, 28, 50, 0.97) 0%, rgba(15, 17, 30, 0.97) 50%, rgba(28, 18, 42, 0.97) 100%); box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.25), 0 20px 45px -10px rgba(0, 0, 0, 0.95), 0 0 35px -5px rgba(165, 180, 252, 0.35);">
+          <!-- Top ambient gradient accent line -->
+          <div class="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-blue-400 via-[#cfe2f8] to-purple-400 opacity-90"></div>
+
+          <div class="flex items-center justify-between gap-3 mb-2.5">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-gradient-to-r from-[#cfe2f8]/20 to-purple-500/20 border border-[#cfe2f8]/30">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#cfe2f8] animate-pulse"></span>
+              <span class="text-[10px] font-mono text-[#cfe2f8] uppercase tracking-wider font-semibold" id="tipCluster">Consideration</span>
+            </div>
+            <span class="text-[11px] text-zinc-300 font-mono font-medium" id="tipBrand">• KFC</span>
           </div>
-          <div class="text-sm font-normal text-white" id="tipTitle">Pratfall Effect</div>
-          <div class="text-xs text-[var(--text-dim)] max-w-xs mt-1" id="tipDesc">Hiệu ứng cú ngã vụng về: Sự bất toàn đáng yêu.</div>
-          <div class="text-[11px] text-[#cfe2f8] font-mono mt-2 pt-1 border-t border-white/[0.08] flex items-center justify-between">
+
+          <div class="text-base font-medium text-white tracking-tight leading-snug mb-1" id="tipTitle">Pratfall Effect</div>
+          <div class="text-xs text-[#b8c7fc] font-normal leading-relaxed mb-3.5" id="tipDesc">Hiệu ứng cú ngã vụng về: Sự bất toàn đáng yêu.</div>
+
+          <div class="text-[11px] text-[#cfe2f8] font-mono pt-2.5 border-t border-white/[0.1] flex items-center justify-between">
             <span id="tipCtaText">Bấm điểm sáng để nạp Case Study</span>
-            <span>↗</span>
+            <span class="text-[#cfe2f8] text-xs font-bold">↗</span>
           </div>
         </div>
 
@@ -1021,7 +1029,7 @@
         rotOff: "Tắt",
         resetCam: "Căn giữa",
         canvasHint: "🖱️ Cuộn chuột / Chụm ngón tay để <strong>phóng to cực đại vào từng phân tử</strong> · Kéo chuột xoay 3D · <strong>Shift + Kéo hoặc Chuột phải để Pan</strong> · Nhấp đúp vào phân tử",
-        tipCta: "Bấm điểm sáng để nạp Case Study ↗",
+        tipCta: "Bấm điểm sáng để nạp Case Study",
         zoomRange: "Phóng đại vi mô: 35% - 1000%",
         spotlightHeading: "CASE STUDIES TIÊU BIỂU CÓ ẢNH MINH HỌA NỘI TẠI (1-CLICK XEM NGAY):",
         spotlightSub: "100% Embedded Base64 · Không lỗi ảnh",
@@ -1082,7 +1090,7 @@
         rotOff: "Off",
         resetCam: "Reset View",
         canvasHint: "🖱️ Scroll wheel / Pinch to <strong>zoom into molecular scale</strong> · Drag to orbit 3D · <strong>Shift + Drag or Right-drag to Pan</strong> · Double-click to fly in",
-        tipCta: "Click neuron to load Case Study ↗",
+        tipCta: "Click neuron to load Case Study",
         zoomRange: "Molecular Zoom: 35% - 1000%",
         spotlightHeading: "FEATURED CANNES LIONS & GLOBAL CASES (1-CLICK INSTANT PREVIEW):",
         spotlightSub: "100% Embedded Visuals · Instant Load",
@@ -1803,9 +1811,9 @@
     let targetPanX = 0;
     let targetPanY = 0;
 
-    const baseDefaultZoom = 520;
-    let zoom = 520;
-    let targetZoom = 520;
+    const baseDefaultZoom = 580;
+    let zoom = 580;
+    let targetZoom = 580;
     const minZoom = 180;
     const maxZoom = 5400; // Deep molecular zoom limit
 
@@ -1827,6 +1835,8 @@
       targetZoom = baseDefaultZoom;
       targetPanX = 0;
       targetPanY = 0;
+      panX = 0;
+      panY = 0;
       targetRotX = 0.2;
       targetRotY = -0.5;
       updateZoomDisplay();
@@ -1928,6 +1938,13 @@
     let pulse = 0;
     function renderFrame() {
       pulse += 0.025;
+
+      // Auto-sync canvas client dimensions continuously (Guarantees brain is ALWAYS 100% centered)
+      const curW = canvas.clientWidth;
+      const curH = canvas.clientHeight;
+      if (curW > 0 && curH > 0 && (curW !== width || curH !== height)) {
+        resize();
+      }
 
       // Smooth Lerp Camera
       rotX += (targetRotX - rotX) * 0.12;
@@ -2066,16 +2083,17 @@
         ctx.fill();
 
         // D. High-Definition Molecular Labels
-        const showLabel = isHover || (zoom > 950) || (p.depth > 0.38 && !isFiltered);
+        const isSelected = window.currentActiveEffect && window.currentActiveEffect.id === node.id;
+        const showLabel = isHover || isSelected || (zoom > 1500 && p.depth > 0.65 && !isFiltered);
         if (showLabel) {
           ctx.save();
           const displayName = isVi ? node.nameVi : node.nameEn;
-          if (zoom > 950) {
-            ctx.fillStyle = isHover ? '#ffffff' : 'rgba(255, 255, 255, 0.95)';
-            ctx.font = isHover ? '600 13px DM Sans, Manrope, sans-serif' : '500 12px DM Sans, Manrope, sans-serif';
+          if (zoom > 1100 || isHover || isSelected) {
+            ctx.fillStyle = isHover ? '#ffffff' : (isSelected ? '#cfe2f8' : 'rgba(255, 255, 255, 0.95)');
+            ctx.font = (isHover || isSelected) ? '600 13px DM Sans, Manrope, sans-serif' : '500 12px DM Sans, Manrope, sans-serif';
             ctx.fillText(displayName, p.px + radius + 8, p.py - 1);
 
-            ctx.fillStyle = '#cfe2f8';
+            ctx.fillStyle = isHover ? '#cfe2f8' : '#a5b4fc';
             ctx.font = '500 10px JetBrains Mono, monospace';
             ctx.fillText(`${node.brand} • ${node.category}`, p.px + radius + 8, p.py + 14);
 
@@ -2085,8 +2103,8 @@
               ctx.fillText(t.flyToHint, p.px + radius + 8, p.py + 27);
             }
           } else {
-            ctx.fillStyle = isHover ? '#cfe2f8' : 'rgba(255, 255, 255, 0.85)';
-            ctx.font = isHover ? '500 12px DM Sans, Manrope, sans-serif' : '400 10px DM Sans, Manrope, sans-serif';
+            ctx.fillStyle = isHover ? '#cfe2f8' : (isSelected ? '#cfe2f8' : 'rgba(255, 255, 255, 0.85)');
+            ctx.font = (isHover || isSelected) ? '500 12px DM Sans, Manrope, sans-serif' : '400 10px DM Sans, Manrope, sans-serif';
             ctx.fillText(displayName, p.px + radius + 5, p.py + 3);
           }
           ctx.restore();
@@ -2176,18 +2194,8 @@
 
     canvas.addEventListener('wheel', (e) => {
       e.preventDefault();
-      const rect = canvas.getBoundingClientRect();
-      const mx = e.clientX - rect.left - width * 0.5 - panX;
-      const my = e.clientY - rect.top - height * 0.5 - panY;
-
       const factor = Math.exp(-e.deltaY * 0.002);
-      const prevTargetZoom = targetZoom;
       targetZoom = Math.max(minZoom, Math.min(maxZoom, targetZoom * factor));
-
-      const ratio = targetZoom / prevTargetZoom;
-      targetPanX -= mx * (ratio - 1) * 0.45;
-      targetPanY -= my * (ratio - 1) * 0.45;
-
       updateZoomDisplay();
     }, { passive: false });
 
@@ -2322,7 +2330,8 @@
 
   <!-- Interactive Case Study In-Depth Modal (Lightbox) -->
   <div id="caseDetailModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 overflow-y-auto" onclick="if(event.target===this) closeCaseModal()">
-    <div class="relative w-full max-w-4xl bg-[#121215] border border-white/[0.12] rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh] my-auto animate-in fade-in zoom-in-95 duration-200" onclick="event.stopPropagation()">
+    <div class="relative w-full max-w-4xl border border-white/[0.16] rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh] my-auto animate-in fade-in zoom-in-95 duration-200" style="background: linear-gradient(135deg, rgba(20, 24, 42, 0.98) 0%, rgba(14, 16, 28, 0.98) 50%, rgba(26, 17, 36, 0.98) 100%); box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.2), 0 25px 60px -15px rgba(0, 0, 0, 0.95), 0 0 50px -10px rgba(147, 197, 253, 0.2);" onclick="event.stopPropagation()">
+      <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-blue-500 via-[#cfe2f8] to-purple-500 opacity-95 pointer-events-none"></div>
       <!-- Modal Header -->
       <div class="flex items-center justify-between px-6 py-4 border-b border-white/[0.08] bg-[#16161a]">
         <div class="flex items-center gap-3">
